@@ -1,0 +1,34 @@
+.profile {
+    padding-top: 5px;
+    height: 80px;
+    /* max-height: 100px; */
+}
+
+.profile h6 {
+    line-height: 25px;
+}
+
+.date,
+.time {
+    display: block;
+    padding: 10px;
+    height: 60px;
+}
+
+.date span,
+.time span {
+    padding: 10px;
+}
+
+.alarm-icon i {
+    font-size: 22em;
+}
+
+.timer .num {
+    font-size: 5em;
+    padding: 20px;
+}
+
+.timer-button {
+    margin-top: 30px;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alarm</title>
+
+    <!-- My stylesheet Vendor -->
+    <link rel="stylesheet" type="text/css" href="vendor/css/materialize.css" media="screen,projection">
+    <link rel="stylesheet" type="text/css" href="vendor/css/material-icons.css">
+    <link rel="stylesheet" type="text/css" href="vendor/css/animate.css">
+
+    <!-- My css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div id="app-timer">
+        <header class="row">
+            <div class="col s12 m3">
+                <!-- <div class="col s4"></div>
+            <div class="col s8"><span>Morning</span> Segun Olumide</div> -->
+                <div class="card-panel white lighten-5 z-depth-1 profile">
+                    <div class="row valign-wrapper">
+                        <div class="col s4">
+                            <img src="img/card.jpg" width="60px" height="60px" alt="" class="circle">
+                            <!-- notice the "circle" class -->
+                        </div>
+                        <div class="col s8">
+                            <h6 class="black-text">
+                                <span>Good {{hourformat}} !</span>
+                                <br> Segun Olumide </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col m5"></div>
+            <div class="col s12 m4 white-text">
+                <h6 class="date right-align">
+                    <span class="blue z-depth-1"> {{showTodaysDate}}</span>
+                </h6>
+                <h6 class="time right-align">
+                    <span class="blue z-depth-1"> {{showTodayTime}} </span>
+                </h6>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col m6 push-m1 alarm-icon">
+                        <span class="animate">
+                    <i class="black-text text-lighten-2 material-icons z-depth-1">alarm</i>
+                </span>
+                    </div>
+                    <div class="col m4">
+                        <div class="col s12">
+                            <!-- <div class="timer" v-for="times in times" v-bind:time="times">
+                            <span class=" num">00 : 00</span>
+                            <time-item class="text-black" v-for="times in times" v-bind:time="times"></time-item>
+                        </div> -->
+                            <div id="app-timer" class="container-fluid">
+                                <div class="row">
+                                    <time-item v-for="times in times" v-bind:time="times"></time-item>
+                                    <div class="col s12 timer-button center-align">
+                                        <div class="input-field inline">
+                                            <input id="time_inline" type="text" v-model="setter" placeholder="eg 12 : 00 : 00 | hrs : mins : sec" class="validate">
+                                            <label for="time_inline">Set alarm time</label>
+                                            <!-- <span class="helper-text" data-error="wrong" data-success="right">Helper text</span> -->
+                                        </div>
+                                        <a @click="changeds" class="btn-floating btn-large waves-effect waves-light blue">
+                                            <i class="material-icons">add_alarm</i>
+                                        </a>
+                                        <a @click="changeds" class="btn-floating btn-large waves-effect waves-light blue">
+                                            <i class="material-icons">replay</i>
+                                        </a>
+                                        {{endTime}} {{setter}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+    </main>
+    </div>
+
+
+
+
+
+    <!--My Javascript Vendors -->
+    <script type="text/javascript" src="vendor/js/jquery.js"></script>
+    <script type="text/javascript" src="vendor/js/vue.js"></script>
+    <script type="text/javascript" src="vendor/js/materialize.js"></script>
+
+    <!-- My Javascript -->
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+
+</html>
