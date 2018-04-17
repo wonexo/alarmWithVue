@@ -54,12 +54,16 @@ var app = new Vue({
         },
         todaysDate: function() {
             let d = new Date();
-            let nd = this.mymonths[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+            let nd =
+                this.mymonths[d.getMonth()] +
+                " " +
+                d.getDate() +
+                ", " +
+                d.getFullYear();
             let hr = d.getHours();
             let nhr = d.getHours();
-            let sc =
-                this.showTodaysDate = nd;
-            if (hr > 12) {
+            let sc = (this.showTodaysDate = nd);
+            if (hr >= 12) {
                 if (hr > 16) {
                     this.hourformat = "Evening";
                 } else {
@@ -86,7 +90,12 @@ var app = new Vue({
             let d = new Date();
             this.todaysDate();
             let nhr = d.getHours();
-            let nd = this.mymonths[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+            let nd =
+                this.mymonths[d.getMonth()] +
+                " " +
+                d.getDate() +
+                ", " +
+                d.getFullYear();
 
             // this.endTime = "april 13, 2018 24:00:00";
             let ntm = nhr + " : " + d.getMinutes();
@@ -97,8 +106,8 @@ var app = new Vue({
             if (
                 this.times[3].time > 0 ||
                 this.times[2].time > 0 ||
-                this.times[1].time > 0
-                // this.times[0].time > 0
+                this.times[1].time > 0 ||
+                this.times[0].time > 0
             ) {
                 this.getTimeRemaining();
                 this.updateProgressBar();

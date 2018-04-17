@@ -30,8 +30,9 @@
                         </div>
                         <div class="col s8">
                             <h6 class="black-text">
+                                <span>Good Morning !</span>
                                 <span>Good {{hourformat}} !</span>
-                                <br> Segun Olumide </h6>
+                                <!-- <br> Segun Olumide </h6> -->
                         </div>
                     </div>
                 </div>
@@ -40,8 +41,10 @@
             <div class="col s12 m4 white-text">
                 <h6 class="date right-align">
                     <span class="blue z-depth-1"> {{showTodaysDate}}</span>
+                    <!-- <span class="blue z-depth-1">date </span> -->
                 </h6>
                 <h6 class="time right-align">
+                    <!-- <span class="blue z-depth-1"> date </span> -->
                     <span class="blue z-depth-1"> {{showTodayTime}} </span>
                 </h6>
             </div>
@@ -57,23 +60,22 @@
                     </div>
                     <div class="col m4">
                         <div class="col s12">
-                            <!-- <div class="timer" v-for="times in times" v-bind:time="times">
-                            <span class=" num">00 : 00</span>
-                            <time-item class="text-black" v-for="times in times" v-bind:time="times"></time-item>
-                        </div> -->
                             <div id="app-timer" class="container-fluid">
                                 <div class="row">
-                                    <time-item v-for="times in times" v-bind:time="times"></time-item>
+
+
+                                    <!-- Timer starts Here!!! -->
+                                    <time-item v-for="time in times" v-bind:time="time"></time-item>
                                     <div class="col s12 timer-button center-align">
                                         <div class="input-field inline">
-                                            <input id="time_inline" type="text" v-model="setter" placeholder="eg 12 : 00 : 00 | hrs : mins : sec" class="validate">
+                                            <input id="time_inline" type="text" v-model="alarmTime" placeholder="eg 12 : 00 : 00 | hrs : mins : sec" class="validate">
                                             <label for="time_inline">Set alarm time</label>
                                             <!-- <span class="helper-text" data-error="wrong" data-success="right">Helper text</span> -->
                                         </div>
                                         <a @click="changeds" class="btn-floating btn-large waves-effect waves-light blue">
                                             <i class="material-icons">add_alarm</i>
                                         </a>
-                                        <a @click="changeds" class="btn-floating btn-large waves-effect waves-light blue">
+                                        <a @click="setAlarm" class="btn-floating btn-large waves-effect waves-light blue">
                                             <i class="material-icons">replay</i>
                                         </a>
                                         {{endTime}} {{setter}}
@@ -98,6 +100,7 @@
     <script type="text/javascript" src="vendor/js/jquery.js"></script>
     <script type="text/javascript" src="vendor/js/vue.js"></script>
     <script type="text/javascript" src="vendor/js/materialize.js"></script>
+    <script type="text/javascript" src="vendor/js/moment.js"></script>
 
     <!-- My Javascript -->
     <script type="text/javascript" src="js/app.js"></script>
