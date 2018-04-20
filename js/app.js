@@ -87,8 +87,8 @@ var app = new Vue({
 
         // STart Here
         changeds: function() {
-            let d = new Date();
             this.todaysDate();
+            let d = new Date();
             let nhr = d.getHours();
             let nd =
                 this.mymonths[d.getMonth()] +
