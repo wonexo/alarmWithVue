@@ -14,6 +14,7 @@ var app = new Vue({
         saveInterval: undefined,
         timeInterval: undefined,
         countDown: undefined,
+        identify: undefined
     },
     methods: {
         setAlarm() {
@@ -101,6 +102,7 @@ var app = new Vue({
     },
     created() {
         this.timeInterval = setInterval(this.getDate, 100);
+
     }
 });
 

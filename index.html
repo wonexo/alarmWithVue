@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!/home/wonexo/Documents/UI Tools/Materialize/materializeDOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,9 +8,9 @@
     <title>Alarm</title>
 
     <!-- My stylesheet Vendor -->
+    <link rel="stylesheet" type="text/css" href="vendor/css/animate.css">
     <link rel="stylesheet" type="text/css" href="vendor/css/materialize.css" media="screen,projection">
     <link rel="stylesheet" type="text/css" href="vendor/css/material-icons.css">
-    <link rel="stylesheet" type="text/css" href="vendor/css/animate.css">
 
     <!-- My css -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -83,23 +83,36 @@
                                             <label for="time_inline">SECONDS</label>
                                             <!-- <span class="helper-text" data-error="wrong" data-success="right">Helper text</span> -->
                                         </div>
-                                        <a @click="setAlarm" class="btn-floating btn-large waves-effect waves-light blue">
+                                        <a id="menu" @click="setAlarm" class="btn-floating btn-large waves-effect waves-light blue">
                                             <i class="material-icons">add_alarm</i>
                                         </a>
+                                        <!-- Element Showed -->
+                                        <!-- <a href="#!" id="menu" class="waves-effect waves-light btn btn-floating"><i class="material-icons">menu</i></a> -->
+
+                                        <!-- Tap Target Structure -->
+                                        <div class="tap-target blue" data-activates="menu">
+                                            <div class="tap-target-content white-text">
+                                                <h5>Welcome To Alarm IT</h5>
+                                                <p>Click Here to start the Alarm Time,
+                                                    <br>Note: The Hour format is 24hrs
+                                                </p>
+                                            </div>
+                                        </div>
                                         <a @click="resetAlarm" class="btn-floating btn-large waves-effect waves-light blue">
                                             <i class="material-icons">replay</i>
                                         </a>
+
                                         <!-- {{this.alarmTimeHour + ":" + this.alarmTimeMinute + ":" + this.alarmTimeSeconds}} :: -->
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
     </div>
-
-
     </main>
     </div>
 
@@ -110,10 +123,15 @@
     <!--My Javascript Vendors -->
     <script type="text/javascript" src="vendor/js/jquery.js"></script>
     <script type="text/javascript" src="vendor/js/materialize.js"></script>
-    <script type="text/javascript" src="vendor/js/vue.js"></script>
     <script type="text/javascript" src="vendor/js/moment.js"></script>
+    <script type="text/javascript" src="vendor/js/vue.js"></script>
 
     <!-- My Javascript -->
+    <script>
+        $(document).ready(function() {
+            $('.tap-target').tapTarget('open');
+        });
+    </script>
     <script type="text/javascript" src="js/timerr.js"></script>
 </body>
 
