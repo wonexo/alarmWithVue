@@ -30,8 +30,8 @@
                         </div>
                         <div class="col s8">
                             <h6 class="black-text">
-                                <span>Good Morning !</span>
-                                <!-- <span>Good {{hourformat}} !</span> -->
+                                <!-- <span>Good Morning !</span> -->
+                                <span>Good {{hourformat}}!</span>
                                 <br> Segun Olumide </h6>
                         </div>
                     </div>
@@ -40,12 +40,12 @@
             <div class="col m5"></div>
             <div class="col s12 m4 white-text">
                 <h6 class="date right-align">
-                    <!-- <span class="blue z-depth-1"> {{showTodaysDate}}</span> -->
-                    <span class="blue z-depth-1">date </span>
+                    <span class="blue z-depth-1"> {{TodaysDate}}</span>
+                    <!-- <span class="blue z-depth-1">date </span> -->
                 </h6>
                 <h6 class="time right-align">
-                    <span class="blue z-depth-1"> date </span>
-                    <!-- <span class="blue z-depth-1"> {{showTodayTime}} </span> -->
+                    <!-- <span class="blue z-depth-1"> date </span> -->
+                    <span class="blue z-depth-1"> {{clock}} </span>
                 </h6>
             </div>
         </header>
@@ -54,19 +54,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col m6 push-m1 alarm-icon">
-                        <span class="animate">
-                    <i class="black-text text-lighten-2 material-icons z-depth-1">alarm</i>
-                </span>
+                        <span class="#clock" class="animate">
+                            <i class="black-text text-lighten-2 material-icons z-depth-1">alarm</i>
+                        </span>
                     </div>
                     <div class="col m4">
                         <div class="col s12">
-                            <div id="app-timer" class="container-fluid">
+                            <div class="container-fluid">
                                 <div class="row">
 
 
                                     <!-- Timer starts Here!!! -->
                                     <!-- <time-item v-for="time in times" v-bind:time="time"></time-item> -->
-
+                                    <span class="countdown">{{timeDiff}}</span>
                                     <div class="col s12 timer-button center-align">
                                         <div class="input-field inline col s4">
                                             <input id="time_inline" type="text" v-model="alarmTimeHour" placeholder="HH" class="validate">
@@ -86,11 +86,10 @@
                                         <a @click="setAlarm" class="btn-floating btn-large waves-effect waves-light blue">
                                             <i class="material-icons">add_alarm</i>
                                         </a>
-                                        <a @click="setAlarm" class="btn-floating btn-large waves-effect waves-light blue">
+                                        <a @click="resetAlarm" class="btn-floating btn-large waves-effect waves-light blue">
                                             <i class="material-icons">replay</i>
                                         </a>
-                                        {{this.alarmTimeHour + ":" + this.alarmTimeMinute + ":" + this.alarmTimeSeconds}} :: {{timeDiff}}
-                                        <span class="countdown"></span>
+                                        <!-- {{this.alarmTimeHour + ":" + this.alarmTimeMinute + ":" + this.alarmTimeSeconds}} :: -->
                                     </div>
                                 </div>
                             </div>
