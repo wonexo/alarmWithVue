@@ -3,7 +3,7 @@ var app = new Vue({
     data: {
         hourformat: "",
         clock: "",
-        clockAnimate: "",
+        // clockAnimate: undefined,
         TodaysDate: "",
         alarmTime: "",
         alarmTimeHour: "",
@@ -53,9 +53,12 @@ var app = new Vue({
                 if (duration.seconds() < 0) {
                     this.timeDiff = $(".countdown").text("Time is Up !!");
                     clearInterval(this.saveInterval);
+                    $("#clock").addClass("animated shake");
                     // When Countdown alarm Time is Up
                 } else if (duration.hours() || duration.minutes() || duration.seconds() > 0) {
                     this.timeDiff = $(".countdown").text(duration.hours() + ":" + duration.minutes() + ":" + duration.seconds());
+                    // this.alarmDone()
+
                 }
             };
 
@@ -71,6 +74,9 @@ var app = new Vue({
             //* Reseting Alarm
             clearInterval(this.saveInterval);
             this.timeDiff = $(".countdown").text("00:00:00");
+        },
+        alarmDone() {
+            $('#clock').addClass('animated shake');
         },
         getDate() {
             // Getting the Calendar and updated Clock time
