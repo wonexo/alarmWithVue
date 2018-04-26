@@ -66,7 +66,9 @@
 
                                     <!-- Timer starts Here!!! -->
                                     <!-- <time-item v-for="time in times" v-bind:time="time"></time-item> -->
-                                    <span class="countdown">{{timeDiff}}</span>
+                                    <div class="s12 center-align">
+                                        <span class=" countdown">{{timeDiff}}</span>
+                                    </div>
                                     <div class="col s12 timer-button center-align">
                                         <div class="input-field inline col s4">
                                             <input id="time_inline" type="text" v-model="alarmTimeHour" placeholder="HH" class="validate">
@@ -90,15 +92,27 @@
                                         <!-- <a href="#!" id="menu" class="waves-effect waves-light btn btn-floating"><i class="material-icons">menu</i></a> -->
 
                                         <!-- Tap Target Structure -->
-                                        <div class="tap-target blue" data-activates="menu">
+                                        <div class="tap-target tone blue" data-activates="menu">
                                             <div class="tap-target-content white-text">
                                                 <h5>Welcome To Alarm IT</h5>
                                                 <p>Click Here to start the Alarm Time,
-                                                    <br>Note: The Hour format is 24hrs
+                                                    <br>Note: The Hour format is 24hrs <br>
+                                                    <a href="#!" class="btn btn-large btn-flatwaves-effect waves-light blue lighten-1 nxt nxt-btn">Next</a>
                                                 </p>
                                             </div>
                                         </div>
-                                        <a @click="resetAlarm" class="btn-floating btn-large waves-effect waves-light blue">
+                                        <!-- Tap Target Structure -->
+                                        <div class="tap-target ttwo blue" data-activates="nextmenu">
+                                            <div class="tap-target-content white-text">
+                                                <h5>Welcome To Alarm IT</h5>
+                                                <p>Click Here to Reset the Time and start Over
+                                                    <br> Enjoy Alarm IT
+                                                    <br>
+                                                    <a href="#!" class="btn btn-large btn-flatwaves-effect waves-light blue lighten-1 dn nxt-btn">Done</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <a id="nextmenu" @click="resetAlarm" class="btn-floating btn-large waves-effect waves-light blue ">
                                             <i class="material-icons">replay</i>
                                         </a>
 
@@ -129,7 +143,17 @@
     <!-- My Javascript -->
     <script>
         $(document).ready(function() {
-            $('.tap-target').tapTarget('open');
+            // $('.tap-target').tapTarget('open');
+
+            // $('.tone').tapTarget('open');
+            // $('.nxt').on('click', function() {
+            //     $('.tone').tapTarget('close');
+            //     $('.ttwo').tapTarget('open');
+            // });
+            // $('.dn').on('click', function() {
+            //     $('.ttwo').tapTarget('close');
+            // })
+
         });
     </script>
     <script type="text/javascript" src="js/timerr.js"></script>

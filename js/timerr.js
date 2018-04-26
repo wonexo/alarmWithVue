@@ -54,16 +54,38 @@ var app = new Vue({
                 if (duration.seconds() < 0) {
                     this.timeDiff = $(".countdown").text("Time is Up !!");
                     clearInterval(this.saveInterval);
-                    $("#clock").addClass("animated shake");
+
+                    // $("#clock").addClass("animated shake");
+                    // this.alarmDone()
+                    $.fn.extend({
+                        animateCss: function(animationName) {
+                            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                            this.addClass('animated ' + animationName).one(animationEnd, function() {
+                                $(this).removeClass('animated ' + animationName);
+                            });
+                            return this;
+                        }
+                    });
+                    // $('#clock').removeClass('animated shake');
+                    setTimeout(() => {
+                        $("#clock").addClass("animated shake");
+                    }, 1000);
+                    console.log("class");
+
+
+
+
+
                     // When Countdown alarm Time is Up
                 } else if (duration.hours() || duration.minutes() || duration.seconds() > 0) {
                     this.timeDiff = $(".countdown").text(duration.hours() + ":" + duration.minutes() + ":" + duration.seconds());
                     // this.alarmDone()
-
                 }
             };
 
             this.resetInterval();
+            // this.resetAlarm();
+
         },
         resetInterval() {
 
@@ -71,12 +93,27 @@ var app = new Vue({
             clearInterval(this.saveInterval);
             this.saveInterval = setInterval(this.countDown, this.interval);
         },
+
         resetAlarm() {
             //* Reseting Alarm
+            $("#clock").removeClass("animated shake");
+            console.log("class removed");
+
             clearInterval(this.saveInterval);
             this.timeDiff = $(".countdown").text("00:00:00");
+
         },
         alarmDone() {
+            $.fn.extend({
+                animateCss: function(animationName) {
+                    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                    this.addClass('animated ' + animationName).one(animationEnd, function() {
+                        $(this).removeClass('animated ' + animationName);
+                    });
+                    return this;
+                }
+            });
+
             $('#clock').addClass('animated shake');
         },
         getDate() {
