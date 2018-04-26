@@ -1,7 +1,7 @@
 .profile {
     padding-top: 5px;
-    height: 80px;
-    /* max-height: 100px; */
+    max-height: 100px;
+    height: auto;
 }
 
 .profile h6 {
@@ -30,14 +30,14 @@
 }
 
 .timer-button {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .nxt-btn {
-    margin-top: 20px;
+    margin-top: 10px;
     /* border: 1px solid white; */
 }
 
 .countdown {
-    font-size: 5em;
+    font-size: 4.5em;
 }

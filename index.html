@@ -62,10 +62,7 @@
                         <div class="col s12">
                             <div class="container-fluid">
                                 <div class="row">
-
-
                                     <!-- Timer starts Here!!! -->
-                                    <!-- <time-item v-for="time in times" v-bind:time="time"></time-item> -->
                                     <div class="s12 center-align">
                                         <span class=" countdown">{{timeDiff}}</span>
                                     </div>
@@ -145,18 +142,18 @@
         $(document).ready(function() {
             // $('.tap-target').tapTarget('open');
 
-            // $('.tone').tapTarget('open');
-            // $('.nxt').on('click', function() {
-            //     $('.tone').tapTarget('close');
-            //     $('.ttwo').tapTarget('open');
-            // });
-            // $('.dn').on('click', function() {
-            //     $('.ttwo').tapTarget('close');
-            // })
+            $('.tone').tapTarget('open');
+            $('.nxt').on('click', function() {
+                $('.tone').tapTarget('close');
+                $('.ttwo').tapTarget('open');
+            });
+            $('.dn').on('click', function() {
+                $('.ttwo').tapTarget('close');
+            })
 
         });
     </script>
-    <script type="text/javascript" src="js/timerr.js"></script>
+    <script type="text/javascript" src="js/timer.js"></script>
 </body>
 
 </html>.
