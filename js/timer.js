@@ -36,9 +36,6 @@ var app = new Vue({
                 s: this.alarmTimeSeconds
             });
 
-            // comparing current date with my new date
-            // console.log(setDate.toDate().toString());
-            // console.log(currentDate);
 
             // * Getting the time Difference
             var eventTime = setDate.format("X"); // Timestamp - Sun, 21 Apr 2013 13:00:00 GMT
@@ -46,6 +43,7 @@ var app = new Vue({
             var diffTime = eventTime - currentTime;
             duration = moment.duration(diffTime * 1000, "milliseconds");
             var interval = 1000;
+            var clockIcon = $("#clock");
 
             // Counting the time down
             this.countDown = function() {
@@ -61,16 +59,17 @@ var app = new Vue({
                         animateCss: function(animationName) {
                             var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
                             this.addClass('animated ' + animationName).one(animationEnd, function() {
-                                $(this).removeClass('animated ' + animationName);
+                                $(this).removeClass("animated " + animationName);
                             });
                             return this;
                         }
                     });
-                    // $('#clock').removeClass('animated shake');
-                    setTimeout(() => {
-                        $("#clock").addClass("animated shake");
-                    }, 1000);
-                    console.log("class");
+                    // setTimeout(() => {
+                    //     $("#clock").addClass("animated shake");
+                    //     $("#clock").addClass("red-text");
+                    // }, 1000);
+                    clockIcon.animateCss('shake red-text');
+                    // console.log("class");
 
 
 
@@ -97,6 +96,7 @@ var app = new Vue({
         resetAlarm() {
             //* Reseting Alarm
             $("#clock").removeClass("animated shake");
+            $("#clock").removeClass("red-text");
             console.log("class removed");
 
             clearInterval(this.saveInterval);
@@ -115,6 +115,7 @@ var app = new Vue({
             });
 
             $('#clock').addClass('animated shake');
+            $("#clock").addClass("red-text");
         },
         getDate() {
             // Getting the Calendar and updated Clock time
