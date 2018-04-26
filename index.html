@@ -22,17 +22,18 @@
             <div class="col s12 m3">
                 <!-- <div class="col s4"></div>
             <div class="col s8"><span>Morning</span> Segun Olumide</div> -->
-                <div class="card-panel white lighten-5 z-depth-1 profile">
+                <div class="white lighten-5 profile">
                     <div class="row valign-wrapper">
-                        <div class="col s4">
+                        <!-- <div class="col s4">
                             <img src="img/card.jpg" width="60px" height="60px" alt="" class="circle">
-                            <!-- notice the "circle" class -->
-                        </div>
-                        <div class="col s8">
-                            <h6 class="black-text">
-                                <!-- <span>Good Morning !</span> -->
-                                <span>Good {{hourformat}}!</span>
-                                <br> Segun Olumide </h6>
+                        </div> -->
+                        <div class="col s12">
+                            <div class="chip">
+                                <img src="img/card.jpg" alt="Contact Person"> Segun Olumide
+                            </div>
+                            <h6>
+                                <span class="grey-text text-darken-2">Good {{hourformat}}!</span>
+                            </h6>
                         </div>
                     </div>
                 </div>
@@ -90,28 +91,27 @@
                                         <a id="menu" @click="setAlarm" class="btn-floating btn-large waves-effect waves-light blue">
                                             <i class="material-icons">add_alarm</i>
                                         </a>
-
-                                        <a id="nextmenu" @click="resetAlarm" class="btn-floating btn-large waves-effect waves-light red">
-                                            <i class="material-icons">replay</i>
-                                        </a>
-
-
                                         <!-- Tap Target Structure -->
                                         <div class="tap-target tone blue" data-activates="menu">
                                             <div class="tap-target-content white-text">
-                                                <h5>Welcome To Alarm IT</h5>
+                                                <h5>Welcome To Alarm with Vue</h5>
                                                 <p>Click Here to start the Alarm Time,
-                                                    <br>Note: The Hour format is 24hrs <br>
+                                                    <br>Note: The Hour format is 24hrs
+                                                    <br>
                                                     <a href="#!" class="btn btn-large btn-flatwaves-effect waves-light white nxt nxt-btn black-text">Next</a>
                                                 </p>
                                             </div>
                                         </div>
+
+                                        <a id="nextmenu" @click="resetAlarm" class="btn-floating btn-large waves-effect waves-light red">
+                                            <i class="material-icons">replay</i>
+                                        </a>
                                         <!-- Tap Target Structure -->
                                         <div class="tap-target ttwo red" data-activates="nextmenu">
                                             <div class="tap-target-content white-text">
-                                                <h5>Welcome To Alarm IT</h5>
+                                                <h5>Welcome To Alarm with Vue</h5>
                                                 <p>Click Here to Reset the Time and start Over
-                                                    <br> Enjoy Alarm IT
+                                                    <br> Enjoy Alarm with Vue
                                                     <br>
                                                     <a href="#!" class="btn btn-large btn-flatwaves-effect waves-light white lighten-1 dn nxt-btn black-text">Done</a>
                                                 </p>
