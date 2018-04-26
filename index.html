@@ -55,7 +55,7 @@
                 <div class="row">
                     <div class="col m6 push-m1 alarm-icon">
                         <span class="animate">
-                            <i id="clock" class="text-lighten-1 material-icons z-depth-1">alarm</i>
+                            <i id="clock" class="text-lighten-1 material-icons">alarm</i>
                         </span>
                     </div>
                     <div class="col m4">
@@ -82,11 +82,19 @@
                                             <label for="time_inline">SECONDS</label>
                                             <!-- <span class="helper-text" data-error="wrong" data-success="right">Helper text</span> -->
                                         </div>
+                                        <div class="s12">
+                                            <input id="tp" type="text" v-model="showClock" class="timepicker">
+                                            <a href="#!" @click="checkingTime">Console</a>
+                                        </div>
+
                                         <a id="menu" @click="setAlarm" class="btn-floating btn-large waves-effect waves-light blue">
                                             <i class="material-icons">add_alarm</i>
                                         </a>
-                                        <!-- Element Showed -->
-                                        <!-- <a href="#!" id="menu" class="waves-effect waves-light btn btn-floating"><i class="material-icons">menu</i></a> -->
+
+                                        <a id="nextmenu" @click="resetAlarm" class="btn-floating btn-large waves-effect waves-light red">
+                                            <i class="material-icons">replay</i>
+                                        </a>
+
 
                                         <!-- Tap Target Structure -->
                                         <div class="tap-target tone blue" data-activates="menu">
@@ -109,9 +117,6 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <a id="nextmenu" @click="resetAlarm" class="btn-floating btn-large waves-effect waves-light red">
-                                            <i class="material-icons">replay</i>
-                                        </a>
 
                                         <!-- {{this.alarmTimeHour + ":" + this.alarmTimeMinute + ":" + this.alarmTimeSeconds}} :: -->
                                     </div>
@@ -133,27 +138,12 @@
 
     <!--My Javascript Vendors -->
     <script type="text/javascript" src="vendor/js/jquery.js"></script>
-    <script type="text/javascript" src="vendor/js/materialize.js"></script>
+    <script type="text/javascript" src="vendor/js/materialize_beta.js"></script>
+    <!-- <script type="text/javascript" src="vendor/js/materialize.js"></script> -->
     <script type="text/javascript" src="vendor/js/moment.js"></script>
     <script type="text/javascript" src="vendor/js/vue.js"></script>
 
     <!-- My Javascript -->
-    <script>
-        $(document).ready(function() {
-            // $('.tap-target').tapTarget('open');
-
-            $('.tone').tapTarget('open');
-            $('.nxt').on('click', function() {
-                $('.tone').tapTarget('close');
-                $('.ttwo').tapTarget('open');
-            });
-            $('.dn').on('click', function() {
-                $('.ttwo').tapTarget('close');
-            })
-
-        });
-    </script>
+    <script type="text/javascript" src="js/init.js"></script>
     <script type="text/javascript" src="js/timer.js"></script>
 </body>
-
-</html>.

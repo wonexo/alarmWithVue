@@ -41,3 +41,12 @@
 .countdown {
     font-size: 4.5em;
 }
+
+.tap-target-content {
+    padding: 100px !important;
+}
+
+#clock {
+    /* padding: 10px; */
+    border-radius: 50%;
+}
