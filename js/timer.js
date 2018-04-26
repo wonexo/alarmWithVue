@@ -11,6 +11,7 @@ var app = new Vue({
         alarmTimeSeconds: "",
         timeDiff: "00:00:00",
         interval: 1000,
+        showClock: "",
         saveInterval: undefined,
         timeInterval: undefined,
         countDown: undefined,
@@ -135,6 +136,10 @@ var app = new Vue({
             } else {
                 this.hourformat = "Morning";
             }
+        },
+        checkingTime() {
+            var timepick = $("#tp").value;
+            console.log(timepick);
         }
 
     },
