@@ -145,7 +145,6 @@ var app = new Vue({
     },
     created() {
         this.timeInterval = setInterval(this.getDate, 100);
-
     }
 });
 
