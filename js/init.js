@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // M.AutoInit();
-
+    Notification.requestPermission();
     var elem = document.querySelector(".timepicker");
     var instance = M.Timepicker.init(elem, true);
     // instance.showView("minutes");

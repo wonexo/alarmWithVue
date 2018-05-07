@@ -19,6 +19,7 @@ var app = new Vue({
     },
     methods: {
         setAlarm() {
+
             this.timeDiff = null;
 
             // this shows the hours, minutes and seconds inputs
@@ -56,6 +57,7 @@ var app = new Vue({
 
                     // $("#clock").addClass("animated shake");
                     // this.alarmDone()
+
                     $.fn.extend({
                         animateCss: function(animationName) {
                             var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
@@ -65,6 +67,12 @@ var app = new Vue({
                             return this;
                         }
                     });
+                    let push = new Notification("Alarm with Vue", {
+                        body: "Time is up young Warlock" + "\n" + "too bad you don't have a time stone",
+                        icon: "../../img/clock.png",
+                        tag: "Alarm"
+                    });
+
                     // setTimeout(() => {
                     //     $("#clock").addClass("animated shake");
                     //     $("#clock").addClass("red-text");
@@ -105,6 +113,11 @@ var app = new Vue({
 
         },
         alarmDone() {
+            let push = new Notification("Alarm with Vue", {
+                body: "Time is up young Warlock" + "\n" + "too bad you don't have a time stone",
+                icon: "../../img/clock.png",
+                tag: "Alarm"
+            });
             $.fn.extend({
                 animateCss: function(animationName) {
                     var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
@@ -136,10 +149,6 @@ var app = new Vue({
             } else {
                 this.hourformat = "Morning";
             }
-        },
-        checkingTime() {
-            var timepick = $("#tp").value;
-            console.log(timepick);
         }
 
     },
