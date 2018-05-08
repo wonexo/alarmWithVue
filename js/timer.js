@@ -151,8 +151,8 @@ var app = new Vue({
         Push.extend(PushFCM);
         Push.Permission.request(onGranted, onDenied);
 
-        this.timeInterval = sxetInterval(this.getDate, 100);
     }
+    this.timeInterval = setInterval(this.getDate, 100);
 });
 
 
