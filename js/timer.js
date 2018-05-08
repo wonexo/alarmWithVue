@@ -67,7 +67,19 @@ var app = new Vue({
 
                     // Enabling the animation for alarm
                     clockIcon.animateCss('shake red-text');
-                    Push.create("Alarm With Vue");
+
+                    // Push notification
+                    Push.create("Alram with Vue", {
+                        body: "Time up young warlock \n too bad you don't have a time stone",
+                        data: "Time up young warlock \n too bad you don't have a time stone",
+                        icon: '../../img/clock.png',
+                        vibrate: [300, 100],
+                        timeout: 4000,
+                        onClick: function() {
+                            window.focus();
+                            this.close();
+                        }
+                    });
 
                     // When Countdown alarm Time is Up
                 } else if (duration.hours() || duration.minutes() || duration.seconds() > 0) {
