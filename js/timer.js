@@ -130,6 +130,10 @@ var app = new Vue({
 
     },
     created() {
+        const Push = require('pushjs');
+        const PushFCM = require('pushjs-fcm');
+
+
         // Installing Firebase
         var config = {
             apiKey: "AIzaSyAujIYu8N7xyebiuysqWqA5wyfxxp7RYnE",
@@ -141,9 +145,13 @@ var app = new Vue({
         };
 
         firebase.initializeApp(config);
-        this.timeInterval = setInterval(this.getDate, 100);
+        Push.config({
+            FCM: config
+        });
+        Push.extend(PushFCM);
         Push.Permission.request(onGranted, onDenied);
 
+        this.timeInterval = sxetInterval(this.getDate, 100);
     }
 });
 

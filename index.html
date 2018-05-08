@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="vendor/css/animate.css">
     <link rel="stylesheet" type="text/css" href="vendor/css/materialize.css" media="screen,projection">
     <link rel="stylesheet" type="text/css" href="vendor/css/material-icons.css">
-
+    <link rel="manifest" href="/manifest.json">
     <!-- My css -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -143,24 +143,12 @@
     <script type="text/javascript" src="vendor/js/vue.js"></script>
     <script type="text/javascript" src="vendor/js/moment.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+    <script type="text/javascript" src="vendor/js/firebase-messaging-sw.js"></script>
     <script type="text/javascript" src="vendor/js/serviceWorker.min.js"></script>
     <script type="text/javascript" src="vendor/js/push.min.js"></script>
     <script type="text/javascript" src="vendor/js/push.fcm.js"></script>
     <script>
         // Initialize Firebase
-
-
-        Push.config({
-            FCM: {
-                apiKey: "AIzaSyAujIYu8N7xyebiuysqWqA5wyfxxp7RYnE",
-                authDomain: "push-alarm-43c80.firebaseapp.com",
-                databaseURL: "https://push-alarm-43c80.firebaseio.com",
-                projectId: "push-alarm-43c80",
-                storageBucket: "",
-                messagingSenderId: "1097281088688"
-            } //options go here
-
-        })
     </script>
     <!-- My Javascript -->
     <script type="text/javascript" src="js/init.js"></script>
