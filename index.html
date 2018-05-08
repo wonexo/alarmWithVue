@@ -148,15 +148,7 @@
     <script type="text/javascript" src="vendor/js/push.fcm.js"></script>
     <script>
         // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyAujIYu8N7xyebiuysqWqA5wyfxxp7RYnE",
-            authDomain: "push-alarm-43c80.firebaseapp.com",
-            databaseURL: "https://push-alarm-43c80.firebaseio.com",
-            projectId: "push-alarm-43c80",
-            storageBucket: "",
-            messagingSenderId: "1097281088688"
-        };
-        firebase.initializeApp(config);
+
 
         Push.config({
             FCM: {
@@ -167,26 +159,7 @@
                 storageBucket: "",
                 messagingSenderId: "1097281088688"
             } //options go here
-            /* Use AMD */
-            if (typeof define === 'function' && define.amd) {
-                define(['firebase'], function(firebase) {
-                    return factory(root, firebase);
-                });
-            }
-            /* Use CommonJS */
-            else if (typeof module !== 'undefined' && module.exports) {
-                var firebase = require('firebase/app');
-                require('firebase/messaging');
-                module.exports = factory(root, firebase)();
-            }
-            /* Use Browser */
-            else {
-                if (typeof root.Push === 'undefined' || root.Push === null)
-                    console.error(ERR_NO_PUSH);
-                else
-                // Note this line
-                    root.Push.extend(factory(root, root.firebase));
-            }
+
         })
     </script>
     <!-- My Javascript -->

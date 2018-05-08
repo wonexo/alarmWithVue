@@ -79,6 +79,7 @@ var app = new Vue({
                             this.close();
                         }
                     });
+                    Push.extend();
 
                     // When Countdown alarm Time is Up
                 } else if (duration.hours() || duration.minutes() || duration.seconds() > 0) {
@@ -129,6 +130,17 @@ var app = new Vue({
 
     },
     created() {
+        // Installing Firebase
+        var config = {
+            apiKey: "AIzaSyAujIYu8N7xyebiuysqWqA5wyfxxp7RYnE",
+            authDomain: "push-alarm-43c80.firebaseapp.com",
+            databaseURL: "https://push-alarm-43c80.firebaseio.com",
+            projectId: "push-alarm-43c80",
+            storageBucket: "",
+            messagingSenderId: "1097281088688"
+        };
+
+        firebase.initializeApp(config);
         this.timeInterval = setInterval(this.getDate, 100);
         Push.Permission.request(onGranted, onDenied);
 
