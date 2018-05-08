@@ -43,9 +43,9 @@ var app = new Vue({
             var eventTime = setDate.format("X"); // Timestamp - Sun, 21 Apr 2013 13:00:00 GMT
             var currentTime = moment().format("X"); // Timestamp - Sun, 21 Apr 2013 12:30:00 GMT
             var diffTime = eventTime - currentTime;
-            duration = moment.duration(diffTime * 1000, "milliseconds");
             var interval = 1000;
             var clockIcon = $("#clock");
+            duration = moment.duration(diffTime * interval, "milliseconds");
 
             // Counting the time down
             this.countDown = function() {
@@ -54,9 +54,6 @@ var app = new Vue({
                 if (duration.seconds() < 0) {
                     this.timeDiff = $(".countdown").text("Time is Up !!");
                     clearInterval(this.saveInterval);
-
-                    // $("#clock").addClass("animated shake");
-                    // this.alarmDone()
 
                     $.fn.extend({
                         animateCss: function(animationName) {
@@ -67,22 +64,10 @@ var app = new Vue({
                             return this;
                         }
                     });
-                    let push = new Notification("Alarm with Vue", {
-                        body: "Time is up young Warlock" + "\n" + "too bad you don't have a time stone",
-                        icon: "../../img/clock.png",
-                        tag: "Alarm"
-                    });
 
-                    // setTimeout(() => {
-                    //     $("#clock").addClass("animated shake");
-                    //     $("#clock").addClass("red-text");
-                    // }, 1000);
+                    // Enabling the animation for alarm
                     clockIcon.animateCss('shake red-text');
-                    // console.log("class");
-
-
-
-
+                    Push.create("Alarm With Vue");
 
                     // When Countdown alarm Time is Up
                 } else if (duration.hours() || duration.minutes() || duration.seconds() > 0) {
@@ -96,7 +81,6 @@ var app = new Vue({
 
         },
         resetInterval() {
-
             //* Update Alarm
             clearInterval(this.saveInterval);
             this.saveInterval = setInterval(this.countDown, this.interval);
@@ -111,25 +95,6 @@ var app = new Vue({
             clearInterval(this.saveInterval);
             this.timeDiff = $(".countdown").text("00:00:00");
 
-        },
-        alarmDone() {
-            let push = new Notification("Alarm with Vue", {
-                body: "Time is up young Warlock" + "\n" + "too bad you don't have a time stone",
-                icon: "../../img/clock.png",
-                tag: "Alarm"
-            });
-            $.fn.extend({
-                animateCss: function(animationName) {
-                    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-                    this.addClass('animated ' + animationName).one(animationEnd, function() {
-                        $(this).removeClass('animated ' + animationName);
-                    });
-                    return this;
-                }
-            });
-
-            $('#clock').addClass('animated shake');
-            $("#clock").addClass("red-text");
         },
         getDate() {
             // Getting the Calendar and updated Clock time
@@ -159,6 +124,13 @@ var app = new Vue({
 
 
 
+// notify() {
+//     let push = new Notification("Alarm with Vue", {
+//         body: "Time is up young Warlock" + "\n" + "too bad you don't have a time stone",
+//         icon: "../../img/clock.png",
+//         tag: "Alarm"
+//     });
+// }
 
 
 
