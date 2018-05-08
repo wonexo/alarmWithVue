@@ -15,5 +15,4 @@ $(document).ready(function() {
     $(".dn").on("click", function() {
         $(".ttwo").tapTarget("close");
     });
-    Push.Permission.request(onGranted, onDenied);
 });
