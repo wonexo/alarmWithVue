@@ -71,12 +71,11 @@ var app = new Vue({
                     // Push notification
                     Push.create("Alram with Vue", {
                         body: "Time up young warlock \n too bad you don't have a time stone",
-                        data: "Time up young warlock \n too bad you don't have a time stone",
                         icon: '../../img/clock.png',
                         vibrate: [300, 100],
                         timeout: 4000,
                         onClick: function() {
-                            window.focus();
+                            window.focus("https://bit.ly/alarmVue");
                             this.close();
                         }
                     });
