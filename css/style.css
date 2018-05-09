@@ -45,7 +45,12 @@
 }
 
 .countdown {
+    font-family: 'Lato', sans-serif;
     font-size: 4.5em;
+}
+
+.stop {
+    font-size: 50px !important;
 }
 
 .tap-target-content {

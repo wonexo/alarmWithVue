@@ -10,6 +10,7 @@ var app = new Vue({
         alarmTimeMinute: "",
         alarmTimeSeconds: "",
         timeDiff: "00:00:00",
+        showTimer: "",
         interval: 1000,
         showClock: "",
         APMs: "",
@@ -83,7 +84,8 @@ var app = new Vue({
                 duration = moment.duration(duration - interval, "milliseconds");
 
                 if (duration.seconds() < 0) {
-                    this.timeDiff = $(".countdown").text("Time is Up !!");
+                    this.timeDiff = $(".stop").text("Time's Up!");
+
                     clearInterval(this.saveInterval);
 
                     $.fn.extend({
@@ -115,6 +117,7 @@ var app = new Vue({
                     // When Countdown alarm Time is Up
                 } else if (duration.hours() || duration.minutes() || duration.seconds() > 0) {
                     this.timeDiff = $(".countdown").text(duration.hours() + ":" + duration.minutes() + ":" + duration.seconds());
+                    this.showTimer = this.timeDiff;
                     // this.alarmDone()
                 }
             };
