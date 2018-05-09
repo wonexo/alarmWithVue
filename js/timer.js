@@ -74,6 +74,7 @@ var app = new Vue({
                         icon: 'img/clock.png',
                         vibrate: [300, 100],
                         timeout: 4000,
+                        tag: "alarm",
                         onClick: function() {
                             window.focus("https://bit.ly/alarmVue");
                             this.close();
