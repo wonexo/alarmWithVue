@@ -1,7 +1,25 @@
 $(document).ready(function() {
     // M.AutoInit();
     var elem = document.querySelector(".timepicker");
-    var instance = M.Timepicker.init(elem, true);
+    var instance = M.Timepicker.init(elem, {
+        twelveHour: true
+    });
+
+
+
+    var time = $(".timepicker");
+    $("#test").on('click', function() {
+        var newTime = time.val();
+        let timeGet = newTime.split(":");
+        let timeGetMore = timeGet[1].split(" ");
+        console.log(timeGet[0]);
+        // console.log(timeGet[1]);
+        console.log(timeGetMore[0]);
+        console.log(timeGetMore[1]);
+
+        console.log(newTime);
+    })
+
 
     // instances.next();
 
