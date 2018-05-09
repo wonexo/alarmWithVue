@@ -38,6 +38,12 @@
     /* border: 1px solid white; */
 }
 
+.time-diff {
+    margin-top: 75px;
+    height: 71px;
+    margin-bottom: 20px;
+}
+
 .countdown {
     font-size: 4.5em;
 }
@@ -49,5 +55,9 @@
 @media only screen and (max-width: 600px) {
     .tap-target-wrapper {
         display: none;
+    }
+    .time-diff {
+        margin-top: 0px;
+        height: 71px;
     }
 }

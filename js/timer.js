@@ -12,6 +12,7 @@ var app = new Vue({
         timeDiff: "00:00:00",
         interval: 1000,
         showClock: "",
+        APMs: "",
         saveInterval: undefined,
         timeInterval: undefined,
         countDown: undefined,
@@ -21,6 +22,36 @@ var app = new Vue({
         setAlarm() {
 
             this.timeDiff = null;
+            // this.alarmTimeMinute = this.alarmTimeHour = this.alarmTimeSeconds = null;
+            var time = $(".timepicker");
+            var newTime = time.val();
+            var timeSplit = newTime.split(":");
+            var timeSplitLetter = timeSplit[1].split(" ");
+
+
+            // if (this.APM == "AM") {
+            //     this.alarmTimeHour = timeSplit[0];
+            // } else if (this.APM == "PM") {
+
+            //     this.alarmTimeHour = timeSplit[0];
+            //     this.alarmTimeHour = this.alarmTimeHour + 12;
+
+            // }
+
+            this.alarmTimeHour = timeSplit[0];
+
+            this.alarmTimeMinute = timeSplitLetter[0];
+
+            this.APMs = timeSplitLetter[1];
+
+            if (this.APMs == "PM") {
+                this.alarmTimeHour = Number(timeSplit[0]) + 12;
+            } else {
+                this.alarmTimeHour = timeSplit[0];
+            }
+
+
+
 
             // this shows the hours, minutes and seconds inputs
             this.alarmTime = this.alarmTimeHour + ":" + this.alarmTimeMinute + ":" + this.alarmTimeSeconds;
@@ -34,8 +65,8 @@ var app = new Vue({
             // setting my Hour, Minutes and seconds binding it with my Input
             setDate.set({
                 h: this.alarmTimeHour,
-                m: this.alarmTimeMinute,
-                s: this.alarmTimeSeconds
+                m: this.alarmTimeMinute
+                    // s: this.alarmTimeSeconds,
             });
 
 

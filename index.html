@@ -64,60 +64,59 @@
                             <div class="container-fluid">
                                 <div class="row">
                                     <!-- Timer starts Here!!! -->
-                                    <div class="s12 center-align">
-                                        <span class=" countdown">{{timeDiff}}</span>
+                                    <div class="s12 center-align time-diff">
+                                        <span class="countdown">{{timeDiff}}</span>
                                     </div>
-                                    <div class="col s12 timer-button center-align">
-                                        <div class="input-field inline col s4">
-                                            <input id="time_inline" type="number" v-model="alarmTimeHour" placeholder="HH" class="validate">
-                                            <label for="time_inline">HOURS</label>
-                                            <!-- <span class="helper-text" data-error="wrong" data-success="right">Helper text</span> -->
+
+                                    <!-- Testin form-->
+
+
+
+                                    <div class="col s12 timer-button">
+                                        <div class="col s6">
+                                            <input type="text" class="timepicker" placeholder="Set Time">
                                         </div>
-                                        <div class="input-field col s4">
-                                            <input id="time_inline" type="number" v-model="alarmTimeMinute" placeholder="MM" class="validate">
-                                            <label for="time_inline">MINUTES</label>
-                                            <!-- <span class="helper-text" data-error="wrong" data-success="right">Helper text</span> -->
-                                        </div>
-                                        <div class="input-field inline col s4">
-                                            <input id="time_inline" type="number" v-model="alarmTimeSeconds" placeholder="SS" class="validate">
-                                            <label for="time_inline">SECONDS</label>
-                                            <!-- <span class="helper-text" data-error="wrong" data-success="right">Helper text</span> -->
-                                        </div>
+
                                         <!-- <div class="s12">
                                             <input id="tp" type="text" v-model="showClock" class="timepicker">
                                             <a href="#!" @click="checkingTime">Console</a>
                                         </div> -->
 
-                                        <a id="menu" @click="setAlarm" class="btn-floating btn-large waves-effect waves-light blue">
-                                            <i class="material-icons">add_alarm</i>
-                                        </a>
-                                        <!-- Tap Target Structure -->
-                                        <div class="tap-target tone blue" data-activates="menu">
-                                            <div class="tap-target-content white-text">
-                                                <h5>Welcome To Alarm with Vue</h5>
-                                                <p>Click Here to start the Alarm Time,
-                                                    <br>Note: The Hour format is 24hrs
-                                                    <br>
-                                                    <a href="#!" class="btn btn-large btn-flatwaves-effect waves-light white nxt nxt-btn black-text">Next</a>
-                                                </p>
+                                        <div class="col s3">
+                                            <a id="menu" @click="setAlarm" class="btn-floating btn-large waves-effect waves-light blue">
+                                                <i class="material-icons">add_alarm</i>
+                                            </a>
+
+                                            <!-- Tap Target Structure -->
+                                            <div class="tap-target tone blue" data-activates="menu">
+                                                <div class="tap-target-content white-text">
+                                                    <h5>Welcome To Alarm with Vue</h5>
+                                                    <p>Click Here to start the Alarm Time,
+                                                        <br>Note: The Hour format is 24hrs
+                                                        <br>
+                                                        <a href="#!" class="btn btn-large btn-flatwaves-effect waves-light white nxt nxt-btn black-text">Next</a>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
 
-                                        <a id="nextmenu" @click="resetAlarm" class="btn-floating btn-large waves-effect waves-light red">
-                                            <i class="material-icons">replay</i>
-                                        </a>
-                                        <!-- Tap Target Structure -->
-                                        <div class="tap-target ttwo red" data-activates="nextmenu">
-                                            <div class="tap-target-content white-text">
-                                                <h5>Welcome To Alarm with Vue</h5>
-                                                <p>Click Here to Reset the Time and start Over
-                                                    <br> Enjoy Alarm with Vue
-                                                    <br>
-                                                    <a href="#!" class="btn btn-large btn-flatwaves-effect waves-light white lighten-1 dn nxt-btn black-text">Done</a>
-                                                </p>
+                                        <div class=" col s3">
+                                            <a id="nextmenu" @click="resetAlarm" class="btn-floating btn-large waves-effect waves-light red">
+                                                <i class="material-icons">replay</i>
+                                            </a>
+                                            <!-- Tap Target Structure -->
+                                            <div class="tap-target ttwo red" data-activates="nextmenu">
+                                                <div class="tap-target-content white-text">
+                                                    <h5>Welcome To Alarm with Vue</h5>
+                                                    <p>Click Here to Reset the Time and start Over
+                                                        <br> Enjoy Alarm with Vue
+                                                        <br>
+                                                        <a href="#!" class="btn btn-large btn-flatwaves-effect waves-light white lighten-1 dn nxt-btn black-text">Done</a>
+                                                    </p>
+                                                </div>
                                             </div>
-                                        </div>
 
+                                        </div>
                                         <!-- {{this.alarmTimeHour + ":" + this.alarmTimeMinute + ":" + this.alarmTimeSeconds}} :: -->
                                     </div>
                                 </div>
@@ -139,11 +138,10 @@
     <!--My Javascript Vendors -->
     <script type="text/javascript" src="vendor/js/jquery.js"></script>
     <script type="text/javascript" src="vendor/js/materialize_beta.js"></script>
-    <script type="text/javascript" src="vendor/js/materialize.js"></script>
+    <!-- <script type="text/javascript" src="vendor/js/materialize.js"></script> -->
     <script type="text/javascript" src="vendor/js/vue.js"></script>
     <script type="text/javascript" src="vendor/js/moment.js"></script>
     <script type="text/javascript" src="vendor/js/push.min.js"></script>
-    <script type="text/javascript" src="vendor/js/push.fcm.js"></script>
     <!-- My Javascript -->
     <script type="text/javascript" src="js/init.js"></script>
     <script type="text/javascript" src="js/timer.js"></script>
