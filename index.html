@@ -67,20 +67,28 @@
                                     <div class="s12 center-align">
                                         <span class=" countdown">{{timeDiff}}</span>
                                     </div>
+
+                                    <!-- Testin form-->
+
+                                    <div class="col s12">
+                                        <input id="val" type="text" class="timepicker">
+                                    </div>
+
+
                                     <div class="col s12 timer-button center-align">
                                         <div class="input-field inline col s4">
-                                            <input id="time_inline" type="number" v-model="alarmTimeHour" placeholder="HH" class="validate">
-                                            <label for="time_inline">HOURS</label>
+                                            <input id="time_inlineA" type="text" v-model="alarmTimeHour" placeholder="HH" class="validate">
+                                            <label for="time_inlineA">HOURS</label>
                                             <!-- <span class="helper-text" data-error="wrong" data-success="right">Helper text</span> -->
                                         </div>
                                         <div class="input-field col s4">
-                                            <input id="time_inline" type="number" v-model="alarmTimeMinute" placeholder="MM" class="validate">
-                                            <label for="time_inline">MINUTES</label>
+                                            <input type="text" id="time_inlineB" v-model="alarmTimeMinute" placeholder="MM" class="validate">
+                                            <label for="time_inlineB">MINUTES</label>
                                             <!-- <span class="helper-text" data-error="wrong" data-success="right">Helper text</span> -->
                                         </div>
                                         <div class="input-field inline col s4">
-                                            <input id="time_inline" type="number" v-model="alarmTimeSeconds" placeholder="SS" class="validate">
-                                            <label for="time_inline">SECONDS</label>
+                                            <input type="text" id="time_inlineC" v-model="alarmTimeSeconds" placeholder="SS" class="validate">
+                                            <label for="time_inlineC">SECONDS</label>
                                             <!-- <span class="helper-text" data-error="wrong" data-success="right">Helper text</span> -->
                                         </div>
                                         <!-- <div class="s12">
@@ -139,11 +147,10 @@
     <!--My Javascript Vendors -->
     <script type="text/javascript" src="vendor/js/jquery.js"></script>
     <script type="text/javascript" src="vendor/js/materialize_beta.js"></script>
-    <script type="text/javascript" src="vendor/js/materialize.js"></script>
+    <!-- <script type="text/javascript" src="vendor/js/materialize.js"></script> -->
     <script type="text/javascript" src="vendor/js/vue.js"></script>
     <script type="text/javascript" src="vendor/js/moment.js"></script>
     <script type="text/javascript" src="vendor/js/push.min.js"></script>
-    <script type="text/javascript" src="vendor/js/push.fcm.js"></script>
     <!-- My Javascript -->
     <script type="text/javascript" src="js/init.js"></script>
     <script type="text/javascript" src="js/timer.js"></script>

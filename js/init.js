@@ -2,11 +2,16 @@ $(document).ready(function() {
     // M.AutoInit();
     var elem = document.querySelector(".timepicker");
     var instance = M.Timepicker.init(elem, true);
-    // instance.showView("minutes");
 
+    // instances.next();
+
+    // console.log(instance.time())
+
+
+    /*
+    // First Indication 
     $('.tone').tapTarget('open');
-
-
+    // Next Click indicator
     $(".nxt").on("click", function() {
 
         $('.tone').tapTarget('close');
@@ -15,4 +20,5 @@ $(document).ready(function() {
     $(".dn").on("click", function() {
         $(".ttwo").tapTarget("close");
     });
+    */
 });
