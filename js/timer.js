@@ -30,15 +30,6 @@ var app = new Vue({
             var timeSplitLetter = timeSplit[1].split(" ");
 
 
-            // if (this.APM == "AM") {
-            //     this.alarmTimeHour = timeSplit[0];
-            // } else if (this.APM == "PM") {
-
-            //     this.alarmTimeHour = timeSplit[0];
-            //     this.alarmTimeHour = this.alarmTimeHour + 12;
-
-            // }
-
             this.alarmTimeHour = timeSplit[0];
 
             this.alarmTimeMinute = timeSplitLetter[0];
@@ -46,9 +37,15 @@ var app = new Vue({
             this.APMs = timeSplitLetter[1];
 
             if (this.APMs == "PM") {
-                this.alarmTimeHour = Number(timeSplit[0]) + 12;
+                if (this.alarmTimeHour == 12) {
+                    this.alarmTimeHour = timeSplit[0];
+                } else {
+
+                    this.alarmTimeHour = Number(timeSplit[0]) + 12;
+                }
             } else {
-                this.alarmTimeHour = timeSplit[0];
+                this.alarmTimeHour = Number(timeSplit[0]) + 12;
+
             }
 
 
