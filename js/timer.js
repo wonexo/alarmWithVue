@@ -161,7 +161,18 @@ var app = new Vue({
 
     },
     created() {
-
+        if ('serviceworker' in navigator) {
+            navigator.serviceWorker
+                .register('./serviceworker.js', {
+                    scope: './'
+                })
+                .then(function(registration) {
+                    console.log("service worker is registered", registration);
+                })
+                .catch(function(err) {
+                    console.log("service worker is not registered", err);
+                })
+        };
         this.timeInterval = setInterval(this.getDate, 100);
     }
 });

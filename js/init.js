@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     // M.AutoInit();
     var elem = document.querySelector(".timepicker");
     var instance = M.Timepicker.init(elem, {
