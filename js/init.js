@@ -1,11 +1,6 @@
 $(document).ready(function() {
 
     // M.AutoI
-
-    function playAudio() {
-        $("#ring").play();
-    }
-
     var elem = document.querySelector(".timepicker");
     var instance = M.Timepicker.init(elem, {
         twelveHour: true

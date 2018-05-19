@@ -21,13 +21,9 @@
     <div id="app-timer">
         <header class="row">
             <div class="col s12 m6">
-                <!-- <div class="col s4"></div>
-            <div class="col s8"><span>Morning</span> Segun Olumide</div> -->
                 <div class="white lighten-5 profile">
+                    <!-- Greeting Section Start -->
                     <div class="row valign-wrapper">
-                        <!-- <div class="col s4">
-                            <img src="img/card.jpg" width="60px" height="60px" alt="" class="circle">
-                        </div> -->
                         <div class="col s12">
                             <div class="chip">
                                 <img src="img/card.jpg" alt="Contact Person"> Hello There
@@ -37,19 +33,20 @@
                             </h6>
                         </div>
                     </div>
+                    <!-- Greeting Section End -->
                 </div>
             </div>
-            <!-- <div class="col m5"></div> -->
+
+            <!-- Calender start -->
             <div class="col s12 m6  white-text">
                 <h6 class="date right-align">
                     <span class="blue z-depth-1"> {{TodaysDate}}</span>
-                    <!-- <span class="blue z-depth-1">date </span> -->
                 </h6>
                 <h6 class="time right-align">
-                    <!-- <span class="blue z-depth-1"> date </span> -->
                     <span class="blue z-depth-1"> {{clock}} </span>
                 </h6>
             </div>
+            <!-- Calender end-->
         </header>
 
         <main>
@@ -64,34 +61,31 @@
                         <div class="col s12">
                             <div class="container-fluid">
                                 <div class="row">
-                                    <!-- Timer starts Here!!! -->
+
+                                    <!-- Timer starts Display  section start -->
                                     <div class="s12 center-align time-diff">
                                         <span class="countdown">{{timeDiff}}
                                             <span class="stop"></span>
                                         </span>
                                     </div>
-
-                                    <!-- Testin form-->
-
+                                    <!-- Timer starts Display  section end -->
 
 
                                     <div class="col s12 timer-button">
+
+                                        <!-- Input Section for setting up alarm //12hr Format -->
                                         <div class="col s6">
                                             <input type="text" class="timepicker" placeholder="Set Alarm">
                                         </div>
 
-                                        <!-- <div class="s12">
-                                            <input id="tp" type="text" v-model="showClock" class="timepicker">
-                                            <a href="#!" @click="checkingTime">Console</a>
-                                        </div> -->
-
                                         <div class="col s3">
+                                            <!-- Alarm Trigger Button -->
                                             <a id="menu" @click="setAlarm" class="btn-floating btn-large waves-effect waves-light blue">
                                                 <i class="material-icons">add_alarm</i>
                                             </a>
 
                                             <!-- Tap Target Structure -->
-                                            <div class="tap-target tone blue" data-activates="menu">
+                                            <!-- <div class="tap-target tone blue" data-activates="menu">
                                                 <div class="tap-target-content white-text">
                                                     <h5>Welcome To Alarm with Vue</h5>
                                                     <p>Click Here to start the Alarm Time,
@@ -100,17 +94,17 @@
                                                         <a href="#!" class="btn btn-large btn-flatwaves-effect waves-light white nxt nxt-btn black-text">Next</a>
                                                     </p>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
 
                                         <div class=" col s3">
+                                            <!-- Reset Button -->
                                             <a id="nextmenu" @click="resetAlarm" class="btn-floating btn-large waves-effect waves-light red">
                                                 <i class="material-icons">replay</i>
                                             </a>
-                                            <!-- <button @click="ring" type="button"> <i class="material-icons">mic</i> </button> -->
 
                                             <!-- Tap Target Structure -->
-                                            <div class="tap-target ttwo red" data-activates="nextmenu">
+                                            <!-- <div class="tap-target ttwo red" data-activates="nextmenu">
                                                 <div class="tap-target-content white-text">
                                                     <h5>Welcome To Alarm with Vue</h5>
                                                     <p>Click Here to Reset the Time and start Over
@@ -119,17 +113,16 @@
                                                         <a href="#!" class="btn btn-large btn-flatwaves-effect waves-light white lighten-1 dn nxt-btn black-text">Done</a>
                                                     </p>
                                                 </div>
-                                            </div>
+                                            </div> -->
 
                                         </div>
-                                        <!-- {{this.alarmTimeHour + ":" + this.alarmTimeMinute + ":" + this.alarmTimeSeconds}} :: -->
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <audio id="ring" src="files/droplet.ogg" type="audio/ogg"></audio>
-                    <audio id="ringout" src="files/droplet.mp3" type="audio/ogg"></audio>
+                    <!-- <audio id="ring" src="files/droplet.ogg" type="audio/ogg"></audio> -->
+                    <!-- <audio id="ringout" src="files/droplet.mp3" type="audio/ogg"></audio> -->
 
 
                 </div>
@@ -149,6 +142,7 @@
     <script type=" text/javascript " src="vendor/js/vue.js "></script>
     <script type="text/javascript " src="vendor/js/moment.js "></script>
     <script type="text/javascript " src="vendor/js/push.min.js "></script>
+
     <!-- My Javascript -->
     <script type="text/javascript " src="js/init.js "></script>
     <script type="text/javascript " src="js/timer.js "></script>
