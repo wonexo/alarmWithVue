@@ -80,6 +80,7 @@ var app = new Vue({
             this.countDown = function() {
                 duration = moment.duration(duration - interval, "milliseconds");
 
+                // When Alarm is Done counting 
                 if (duration.seconds() < 0) {
                     this.timeDiff = $(".stop").text("Time's Up!");
 
@@ -111,7 +112,11 @@ var app = new Vue({
                         }
                     });
 
-                    // When Countdown alarm Time is Up
+                    // Sound Notification
+                    var audio = new Audio('./files/droplet.mp3');
+
+                    audio.play();
+
                 } else if (duration.hours() || duration.minutes() || duration.seconds() > 0) {
                     this.timeDiff = $(".countdown").text(duration.hours() + ":" + duration.minutes() + ":" + duration.seconds());
                     this.showTimer = this.timeDiff;
