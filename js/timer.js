@@ -157,6 +157,9 @@ var app = new Vue({
             } else {
                 this.hourformat = "Morning";
             }
+        },
+        ring() {
+            $("#ring").play();
         }
 
     },
@@ -167,24 +170,9 @@ var app = new Vue({
 
 
 
-// notify() {
-//     let push = new Notification("Alarm with Vue", {
-//         body: "Time is up young Warlock" + "\n" + "too bad you don't have a time stone",
-//         icon: "../../img/clock.png",
-//         tag: "Alarm"
-//     });
-// }
 
 
-
-
-
-
-
-
-
-
-/***
+/*
  * enter time in input 
  * set alarm
  * reset diff

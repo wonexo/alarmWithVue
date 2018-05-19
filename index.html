@@ -107,6 +107,8 @@
                                             <a id="nextmenu" @click="resetAlarm" class="btn-floating btn-large waves-effect waves-light red">
                                                 <i class="material-icons">replay</i>
                                             </a>
+                                            <!-- <button @click="ring" type="button"> <i class="material-icons">mic</i> </button> -->
+
                                             <!-- Tap Target Structure -->
                                             <div class="tap-target ttwo red" data-activates="nextmenu">
                                                 <div class="tap-target-content white-text">
@@ -126,6 +128,12 @@
                             </div>
                         </div>
                     </div>
+                    <!-- <audio id="ring">
+                        <source src="files/droplet.ogg" type="audio/ogg">
+                        <source src="files/droplet.mp3" type="audio/mpeg">
+                            sound
+                    </audio> -->
+                    <audio id="ring" src="files/droplet.ogg" type="audio/ogg"></audio>
 
 
                 </div>
