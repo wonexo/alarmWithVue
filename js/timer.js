@@ -157,9 +157,6 @@ var app = new Vue({
             } else {
                 this.hourformat = "Morning";
             }
-        },
-        ring() {
-            $("#ring").play();
         }
 
     },
