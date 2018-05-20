@@ -27,7 +27,7 @@ var app = new Vue({
             var time = $(".timepicker");
             var newTime = time.val();
             var timeSplit = newTime.split(":");
-            var timeSplitLetter = timeSplit[1].split(" ");
+            var timeSplitLetter = timeSplit[1] && timeSplit[1].split(" ");
 
 
             this.alarmTimeHour = timeSplit[0];
@@ -169,22 +169,3 @@ var app = new Vue({
         this.timeInterval = setInterval(this.getDate, 100);
     }
 });
-
-
-
-
-
-/*
- * enter time in input 
- * set alarm
- * reset diff
- * store entered time in a variable
- * get time diff
- * decrement diff unitl zero
- * 
- * 
- * 
- * 
- * 
- * 
- */
