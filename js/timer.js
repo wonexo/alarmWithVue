@@ -44,7 +44,7 @@ var app = new Vue({
                     this.alarmTimeHour = Number(timeSplit[0]) + 12;
                 }
             } else {
-                this.alarmTimeHour = Number(timeSplit[0]) + 12;
+                this.alarmTimeHour = Number(timeSplit[0]);
 
             }
 
