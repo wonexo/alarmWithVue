@@ -29,7 +29,7 @@
                                 <img src="img/card.jpg" alt="Contact Person"> Hello There
                             </div>
                             <h6>
-                                <span class="grey-text text-darken-2">Good {{hourformat}}! To You</span>
+                                <span class="grey-text text-darken-2" v-cloak>Good {{hourformat}}! To You</span>
                             </h6>
                         </div>
                     </div>
@@ -40,10 +40,10 @@
             <!-- Calender start -->
             <div class="col s12 m6  white-text">
                 <h6 class="date right-align">
-                    <span class="blue z-depth-1"> {{TodaysDate}}</span>
+                    <span class="blue z-depth-1" v-cloak> {{TodaysDate}}</span>
                 </h6>
                 <h6 class="time right-align">
-                    <span class="blue z-depth-1"> {{clock}} </span>
+                    <span class="blue z-depth-1" v-cloak> {{clock}} </span>
                 </h6>
             </div>
             <!-- Calender end-->
@@ -65,7 +65,7 @@
                                     <!-- Timer starts Display  section start -->
                                     <div class="s12 center-align time-diff">
                                         <span class="countdown">
-                                            <span class="stop">{{showTimer}}</span>
+                                            <span class="stop" v-cloak>{{showTimer}}</span>
                                         <!-- <span class="stop"></span> -->
                                         </span>
                                     </div>
