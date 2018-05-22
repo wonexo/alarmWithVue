@@ -13,8 +13,7 @@ var app = new Vue({
         showClock: "",
         saveInterval: undefined,
         timeInterval: undefined,
-        countDown: undefined,
-        notification: false
+        countDown: undefined
     },
     methods: {
         getDate() {
@@ -98,25 +97,19 @@ var app = new Vue({
                     clockIcon.animateCss('shake red-text');
 
 
-                    this.notification = true;
-                    console.log("[Notify Function] : it should Push", this.notification);
+                    // Push notification
+                    Push.create("Alarm with Vue", {
+                        body: "Time's up young Warlock \nToo bad you don't have a TIME STONE",
+                        icon: 'img/clock.png',
+                        vibrate: [300, 100],
+                        timeout: 4000,
+                        tag: "alarm",
+                        onClick: function() {
+                            window.focus("#");
+                            this.close();
+                        }
+                    });
 
-                    if (this.notification == true) {
-                        console.log("[Notify Function] : it should Push notifications Once");
-
-                        // Push notification
-                        Push.create("Alarm with Vue", {
-                            body: "Time's up young Warlock \n Too bad you don't have a TIME STONE",
-                            icon: 'img/clock.png',
-                            vibrate: [300, 100],
-                            timeout: 4000,
-                            tag: "alarm",
-                            onClick: function() {
-                                window.focus("#");
-                                this.close();
-                            }
-                        });
-                    }
 
                     // Sound Notification
                     var audio = new Audio('./files/droplet.mp3');
@@ -130,7 +123,6 @@ var app = new Vue({
             };
 
             this.resetInterval();
-            this.notify();
         },
         resetInterval() {
             //* Update Alarm
@@ -145,16 +137,10 @@ var app = new Vue({
             $(".countdown").removeClass("stop");
             console.log("classes removed");
             this.timeDiff = $(".countdown").text("0:0:0");
-        },
-
-        notify: function() {
-
-
         }
     },
 
     created() {
-        this.notify();
         this.timeInterval = setInterval(this.getDate, 100);
     }
 });
