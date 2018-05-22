@@ -98,7 +98,7 @@ var app = new Vue({
 
 
                     // Push notification
-                    Push.create("Alarm with Vue", {
+                    Push.create("Alarm", {
                         body: "Time's up young Warlock \nToo bad you don't have a TIME STONE",
                         icon: 'img/clock.png',
                         vibrate: [300, 100],
@@ -142,5 +142,6 @@ var app = new Vue({
 
     created() {
         this.timeInterval = setInterval(this.getDate, 100);
+        Push.Permission.request(onGranted, onDenied);
     }
 });
