@@ -1,58 +1,47 @@
 var app = new Vue({
     el: "#app-timer",
     data: {
-        hourformat: "",
-        clock: "",
-        // clockAnimate: undefined,
-        TodaysDate: "",
-        alarmTime: "",
+        hourformat: "", //Morning , Afternoon , Evening
+        clock: "", //Current Time
+        TodaysDate: "", // Current Day and Day (Tues 24)
+        showTimer: "welcome", //Shows the Timer
         alarmTimeHour: "",
         alarmTimeMinute: "",
         alarmTimeSeconds: "",
-        timeDiff: "00:00:00",
-        showTimer: "",
-        interval: 1000,
+        APMs: "", // AM and PM
+        timeDiff: "",
         showClock: "",
-        APMs: "",
         saveInterval: undefined,
         timeInterval: undefined,
         countDown: undefined,
-        identify: undefined
+        notification: undefined
     },
     methods: {
         setAlarm() {
-
-            this.timeDiff = null;
-            // this.alarmTimeMinute = this.alarmTimeHour = this.alarmTimeSeconds = null;
+            // Extracting the Hour and Minute from the Inputed Time
             var time = $(".timepicker");
             var newTime = time.val();
             var timeSplit = newTime.split(":");
             var timeSplitLetter = timeSplit[1] && timeSplit[1].split(" ");
 
-
+            // Pulling the Data from the Time Input
+            this.timeDiff = null; //reseting timeDiff
+            this.alarmTimeSeconds = moment().format('ss');
             this.alarmTimeHour = timeSplit[0];
-
             this.alarmTimeMinute = timeSplitLetter[0];
-
             this.APMs = timeSplitLetter[1];
-
             if (this.APMs == "PM") {
                 if (this.alarmTimeHour == 12) {
                     this.alarmTimeHour = timeSplit[0];
                 } else {
-
                     this.alarmTimeHour = Number(timeSplit[0]) + 12;
                 }
             } else {
                 this.alarmTimeHour = Number(timeSplit[0]);
-
             }
 
 
-
-
-            // this shows the hours, minutes and seconds inputs
-            this.alarmTime = this.alarmTimeHour + ":" + this.alarmTimeMinute + ":" + this.alarmTimeSeconds;
+            /**** Creating the Countdown From Here ****/
 
             // Getting the Current Date
             var currentDate = moment().format("ddd MMMM D YYYY HH:mm:ss ZZ");
@@ -63,28 +52,27 @@ var app = new Vue({
             // setting my Hour, Minutes and seconds binding it with my Input
             setDate.set({
                 h: this.alarmTimeHour,
-                m: this.alarmTimeMinute
-                    // s: this.alarmTimeSeconds,
+                m: this.alarmTimeMinute,
+                s: this.alarmTimeSeconds
             });
-
 
             // * Getting the time Difference
             var eventTime = setDate.format("X"); // Timestamp - Sun, 21 Apr 2013 13:00:00 GMT
             var currentTime = moment().format("X"); // Timestamp - Sun, 21 Apr 2013 12:30:00 GMT
             var diffTime = eventTime - currentTime;
-            var interval = 1000;
             var clockIcon = $("#clock");
-            duration = moment.duration(diffTime * interval, "milliseconds");
+            var duration = moment.duration(diffTime * 1000, "milliseconds");
+
 
             // Counting the time down
             this.countDown = function() {
-                duration = moment.duration(duration - interval, "milliseconds");
+                duration = moment.duration(duration - 1000, "milliseconds");
 
                 // When Alarm is Done counting 
-                if (duration.seconds() < 0) {
-                    this.timeDiff = $(".stop").text("Time's Up!");
-
+                if (duration.seconds() <= 0) {
                     clearInterval(this.saveInterval);
+
+
 
                     $.fn.extend({
                         animateCss: function(animationName) {
@@ -97,11 +85,13 @@ var app = new Vue({
                     });
 
                     // Enabling the animation for alarm
+                    this.timeDiff = $(".countdown").text("Time's Up!");
+                    $(".countdown").addClass("stop");
                     clockIcon.animateCss('shake red-text');
 
                     // Push notification
                     Push.create("Alram with Vue", {
-                        body: "Time up young warlock \n too bad you don't have a time stone",
+                        body: "Time's up young Warlock \n Too bad you don't have a TIME STONE",
                         icon: 'img/clock.png',
                         vibrate: [300, 100],
                         timeout: 4000,
@@ -114,7 +104,6 @@ var app = new Vue({
 
                     // Sound Notification
                     var audio = new Audio('./files/droplet.mp3');
-
                     audio.play();
 
                 } else if (duration.hours() || duration.minutes() || duration.seconds() > 0) {
@@ -131,17 +120,19 @@ var app = new Vue({
         resetInterval() {
             //* Update Alarm
             clearInterval(this.saveInterval);
-            this.saveInterval = setInterval(this.countDown, this.interval);
+            this.saveInterval = setInterval(this.countDown, 1000);
         },
 
         resetAlarm() {
+
+            clearInterval(this.saveInterval);
             //* Reseting Alarm
             $("#clock").removeClass("animated shake");
             $("#clock").removeClass("red-text");
-            console.log("class removed");
+            $(".countdown").removeClass("stop");
+            console.log("classes removed");
 
-            clearInterval(this.saveInterval);
-            this.timeDiff = $(".countdown").text("00:00:00");
+            this.timeDiff = $(".countdown").text("0:0:0");
 
         },
         getDate() {
