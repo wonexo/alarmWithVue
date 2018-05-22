@@ -14,9 +14,28 @@ var app = new Vue({
         saveInterval: undefined,
         timeInterval: undefined,
         countDown: undefined,
-        notification: undefined
+        notification: false
     },
     methods: {
+        getDate() {
+            // Getting the Calendar and updated Clock time
+            var calender = moment().format('dddd MMMM D YYYY');
+            var clock = moment().format('hh:mm A');
+            this.TodaysDate = calender;
+            this.clock = clock;
+
+            // Comparing Time of Day
+            var hours = moment().format('HH')
+            if (hours >= 12) {
+                if (hours >= 16) {
+                    this.hourformat = "Evening";
+                } else {
+                    this.hourformat = "Afternoon";
+                }
+            } else {
+                this.hourformat = "Morning";
+            }
+        },
         setAlarm() {
             // Extracting the Hour and Minute from the Inputed Time
             var time = $(".timepicker");
@@ -26,6 +45,7 @@ var app = new Vue({
 
             // Pulling the Data from the Time Input
             this.timeDiff = null; //reseting timeDiff
+            this.notification = false;
             this.alarmTimeSeconds = moment().format('ss');
             this.alarmTimeHour = timeSplit[0];
             this.alarmTimeMinute = timeSplitLetter[0];
@@ -72,35 +92,31 @@ var app = new Vue({
                 if (duration.seconds() <= 0) {
                     clearInterval(this.saveInterval);
 
-
-
-                    $.fn.extend({
-                        animateCss: function(animationName) {
-                            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-                            this.addClass('animated ' + animationName).one(animationEnd, function() {
-                                $(this).removeClass("animated " + animationName);
-                            });
-                            return this;
-                        }
-                    });
-
                     // Enabling the animation for alarm
                     this.timeDiff = $(".countdown").text("Time's Up!");
                     $(".countdown").addClass("stop");
                     clockIcon.animateCss('shake red-text');
 
-                    // Push notification
-                    Push.create("Alram with Vue", {
-                        body: "Time's up young Warlock \n Too bad you don't have a TIME STONE",
-                        icon: 'img/clock.png',
-                        vibrate: [300, 100],
-                        timeout: 4000,
-                        tag: "alarm",
-                        onClick: function() {
-                            window.focus("https://bit.ly/alarmVue");
-                            this.close();
-                        }
-                    });
+
+                    this.notification = true;
+                    console.log("[Notify Function] : it should Push", this.notification);
+
+                    if (this.notification == true) {
+                        console.log("[Notify Function] : it should Push notifications Once");
+
+                        // Push notification
+                        Push.create("Alarm with Vue", {
+                            body: "Time's up young Warlock \n Too bad you don't have a TIME STONE",
+                            icon: 'img/clock.png',
+                            vibrate: [300, 100],
+                            timeout: 4000,
+                            tag: "alarm",
+                            onClick: function() {
+                                window.focus("#");
+                                this.close();
+                            }
+                        });
+                    }
 
                     // Sound Notification
                     var audio = new Audio('./files/droplet.mp3');
@@ -114,49 +130,31 @@ var app = new Vue({
             };
 
             this.resetInterval();
-            // this.resetAlarm();
-
+            this.notify();
         },
         resetInterval() {
             //* Update Alarm
             clearInterval(this.saveInterval);
             this.saveInterval = setInterval(this.countDown, 1000);
         },
-
         resetAlarm() {
-
             clearInterval(this.saveInterval);
             //* Reseting Alarm
             $("#clock").removeClass("animated shake");
             $("#clock").removeClass("red-text");
             $(".countdown").removeClass("stop");
             console.log("classes removed");
-
             this.timeDiff = $(".countdown").text("0:0:0");
-
         },
-        getDate() {
-            // Getting the Calendar and updated Clock time
-            var calender = moment().format('dddd MMMM D YYYY');
-            var clock = moment().format('hh:mm A');
-            this.TodaysDate = calender;
-            this.clock = clock;
 
-            // Comparing Time of Day
-            var hours = moment().format('HH')
-            if (hours >= 12) {
-                if (hours >= 16) {
-                    this.hourformat = "Evening";
-                } else {
-                    this.hourformat = "Afternoon";
-                }
-            } else {
-                this.hourformat = "Morning";
-            }
+        notify: function() {
+
+
         }
-
     },
+
     created() {
+        this.notify();
         this.timeInterval = setInterval(this.getDate, 100);
     }
 });
