@@ -91,7 +91,17 @@ var app = new Vue({
                 if ((duration.seconds() <= 0) && (duration.minutes() <= 0)) {
                     clearInterval(this.saveInterval);
 
+
                     // Enabling the animation for alarm
+                    $.fn.extend({
+                        animateCss: function(animationName) {
+                            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                            this.addClass('animated ' + animationName).one(animationEnd, function() {
+                                $(this).removeClass("animated " + animationName);
+                            });
+                            return this;
+                        }
+                    });
                     this.timeDiff = $(".countdown").text("Time's Up!");
                     $(".countdown").addClass("stop");
                     clockIcon.animateCss('shake red-text');
@@ -142,5 +152,6 @@ var app = new Vue({
 
     created() {
         this.timeInterval = setInterval(this.getDate, 100);
+        Push.Permission.request();
     }
 });
