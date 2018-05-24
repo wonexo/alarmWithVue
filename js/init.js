@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    Push.Permission.request();
 
     // M.AutoInit
     var elem = document.querySelector(".timepicker");
