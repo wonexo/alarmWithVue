@@ -36,6 +36,7 @@ var app = new Vue({
             }
         },
         setAlarm() {
+            Push.Permission.request();
             // Extracting the Hour and Minute from the Inputed Time
             var time = $(".timepicker");
             var newTime = time.val();
@@ -152,6 +153,5 @@ var app = new Vue({
 
     created() {
         this.timeInterval = setInterval(this.getDate, 100);
-        Push.Permission.request();
     }
 });
