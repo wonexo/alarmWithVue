@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    Push.Permission.request(onGranted, onDenied);
+
     // M.AutoInit
     var elem = document.querySelector(".timepicker");
     var instance = M.Timepicker.init(elem, {
