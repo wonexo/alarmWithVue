@@ -7,7 +7,7 @@ var app = new Vue({
         showTimer: "welcome", //Shows the Timer
         alarmTimeHour: "",
         alarmTimeMinute: "",
-        alarmTimeSeconds: "",
+        alarmTimeSeconds: 0,
         APMs: "", // AM and PM
         timeDiff: "",
         showClock: "",
@@ -45,7 +45,7 @@ var app = new Vue({
             // Pulling the Data from the Time Input
             this.timeDiff = null; //reseting timeDiff
             this.notification = false;
-            this.alarmTimeSeconds = moment().format('ss');
+            this.alarmTimeSeconds = Number(moment().format('s'));
             this.alarmTimeHour = timeSplit[0];
             this.alarmTimeMinute = timeSplitLetter[0];
             this.APMs = timeSplitLetter[1];
@@ -88,7 +88,7 @@ var app = new Vue({
                 duration = moment.duration(duration - 1000, "milliseconds");
 
                 // When Alarm is Done counting 
-                if (duration.seconds() <= 0) {
+                if ((duration.seconds() <= 0) && (duration.minutes() <= 0)) {
                     clearInterval(this.saveInterval);
 
                     // Enabling the animation for alarm
