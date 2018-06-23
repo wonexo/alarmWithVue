@@ -46,7 +46,6 @@ var app = new Vue({
 
       // Pulling the Data from the Time Input
       this.timeDiff = null; //reseting timeDiff
-      this.notification = false;
       this.alarmTimeSeconds = Number(moment().format("s"));
       this.alarmTimeHour = timeSplit[0];
       this.alarmTimeMinute = timeSplitLetter[0];
@@ -89,7 +88,7 @@ var app = new Vue({
 
         // When Alarm is Done counting
         if (duration.seconds() <= 0 && duration.minutes() <= 0) {
-          app.notification++;
+          app.notification = 1;
           clearInterval(this.saveInterval);
           // Enabling the animation for alarm
           $.fn.extend({
@@ -110,18 +109,18 @@ var app = new Vue({
           clockIcon.animateCss("shake red-text");
 
           // Push notification
-          Push.create("Alarm", {
-            body:
-              "Time's up young Warlock \nToo bad you don't have a TIME STONE",
-            icon: "img/clock.png",
-            vibrate: [300, 100],
-            timeout: 4000,
-            tag: "alarm",
-            onClick: function() {
-              window.focus("#");
-              this.close();
-            }
-          });
+          //   Push.create("Alarm", {
+          //     body:
+          //       "Time's up young Warlock \nToo bad you don't have a TIME STONE",
+          //     icon: "img/clock.png",
+          //     vibrate: [300, 100],
+          //     timeout: 4000,
+          //     tag: "alarm",
+          //     onClick: function() {
+          //       window.focus("#");
+          //       this.close();
+          //     }
+          //   });
 
           // Sound Notification
           var audio = new Audio("./files/droplet.mp3");
@@ -147,6 +146,7 @@ var app = new Vue({
     },
     resetInterval() {
       //* Update Alarm
+      app.notification = 0;
       clearInterval(this.saveInterval);
       this.saveInterval = setInterval(this.countDown, 1000);
     },
@@ -161,9 +161,23 @@ var app = new Vue({
     }
   },
 
-  watch: function(){
-    notification : function (){
+  watch: {
+    notification: function() {
+      if (this.notification === 1) {
         console.log("Notfication Updated by :", this.notification);
+        // Push notification
+        Push.create("Alarm", {
+          body: "Time's up young Warlock \nToo bad you don't have a TIME STONE",
+          icon: "img/clock.png",
+          vibrate: [300, 100],
+          timeout: 4000,
+          tag: "alarm",
+          onClick: function() {
+            window.focus("#");
+            this.close();
+          }
+        });
+      }
     }
   },
   created() {
