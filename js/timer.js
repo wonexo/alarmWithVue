@@ -88,32 +88,23 @@ var app = new Vue({
 
         // When Alarm is Done counting
         if (duration.seconds() <= 0 && duration.minutes() <= 0) {
-          app.notification = 1;
-          clearInterval(this.saveInterval);
-
-
-          // Enabling the animation for alarm
-          $.fn.extend({
-            animateCss: function (animationName) {
-              var animationEnd =
-                "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
-              this.addClass("animated " + animationName).one(
-                animationEnd,
-                function () {
-                  $(this).removeClass("animated " + animationName);
-                }
-              );
-              return this;
-            }
-          });
-
-          this.timeDiff = $(".countdown").text("Time's Up!");
+          // Time Up text
           $(".countdown").addClass("stop");
-          clockIcon.animateCss("shake red-text");
+          this.timeDiff = $(".countdown").text("Time's Up!");
+
+          // Trigger Notification Once using Watch property
+          app.notification = 1;
+
+          // Stop Interval
+          clearInterval(this.saveInterval);
 
           // Sound Notification
           var audio = new Audio("./files/droplet.mp3");
           audio.play();
+
+          // Alarm Animation
+          clockIcon.animateCss("shake red-text");
+
         } else if (
           duration.hours() ||
           duration.minutes() ||
@@ -132,7 +123,7 @@ var app = new Vue({
 
       this.resetInterval();
     },
-    resetInterval() {
+    resetInterval: function () {
       //* Update Alarm
       app.notification = 0;
       clearInterval(this.saveInterval);
