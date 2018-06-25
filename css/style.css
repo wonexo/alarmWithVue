@@ -16,7 +16,12 @@
 .time {
     display: block;
     padding: 10px;
+    padding-right: 20px;
     height: 60px;
+}
+
+.time {
+    margin-top: -20px;
 }
 
 .date span,

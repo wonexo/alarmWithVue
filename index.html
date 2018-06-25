@@ -19,30 +19,33 @@
 
 <body>
     <div id="app-timer">
-        <header class="row">
-            <div class="col s12 m6">
-                <div class="white lighten-5 profile">
-                    <!-- Greeting Section Start -->
-                    <div class="row valign-wrapper">
-                        <div class="col s12">
-                            <div class="chip">
-                                <img src="img/card.jpg" alt="Contact Person"> Hello There
+        <header>
+            <div class="row">
+                <div class="col s5 m6">
+                    <div class="white lighten-5 profile">
+                        <!-- Greeting Section Start -->
+                        <div class="row valign-wrapper">
+                            <div class="col s12">
+                                <div class="chip">
+                                    <img src="img/card.jpg" alt="Contact Person">Good {{hourformat}}!
+                                </div>
+                                <!-- <h6>
+                                <span class="grey-text text-darken-2" v-cloak></span>
+                            </h6> -->
                             </div>
-                            <h6>
-                                <span class="grey-text text-darken-2" v-cloak>Good {{hourformat}}!</span>
-                            </h6>
                         </div>
+                        <!-- Greeting Section End -->
                     </div>
-                    <!-- Greeting Section End -->
+                </div>
+                <div class="s7 m6 ">
+                    <h6 class="date right-align">
+                        <span class="blue z-depth-1 white-text" v-cloak> {{TodaysDate}}</span>
+                    </h6>
                 </div>
             </div>
-
             <!-- Calender start -->
-            <div class="col s12 m6  white-text">
-                <h6 class="date right-align">
-                    <span class="blue z-depth-1" v-cloak> {{TodaysDate}}</span>
-                </h6>
-                <h6 class="time right-align">
+            <div class="col s12 m6  ">
+                <h6 class="time right-align white-text">
                     <span class="blue z-depth-1" v-cloak> {{clock}} </span>
                 </h6>
             </div>
@@ -66,7 +69,7 @@
                                     <div class="s12 center-align time-diff">
                                         <span class="countdown">
                                             <span class="stop" v-cloak>{{showTimer}}</span>
-                                        <!-- <span class="stop"></span> -->
+                                            <!-- <span class="stop"></span> -->
                                         </span>
                                     </div>
                                     <!-- Timer starts Display  section end -->

@@ -19,7 +19,7 @@ var app = new Vue({
   methods: {
     getDate() {
       // Getting the Calendar and updated Clock time
-      var calender = moment().format("dddd MMMM D YYYY");
+      var calender = moment().format("ddd, MMMM D YYYY");
       var clock = moment().format("hh:mm A");
       this.TodaysDate = calender;
       this.clock = clock;
@@ -83,44 +83,33 @@ var app = new Vue({
       var duration = moment.duration(diffTime * 1000, "milliseconds");
 
       // Counting the time down
-      this.countDown = function() {
+      this.countDown = function () {
         duration = moment.duration(duration - 1000, "milliseconds");
 
         // When Alarm is Done counting
         if (duration.seconds() <= 0 && duration.minutes() <= 0) {
           app.notification = 1;
           clearInterval(this.saveInterval);
+
+
           // Enabling the animation for alarm
           $.fn.extend({
-            animateCss: function(animationName) {
+            animateCss: function (animationName) {
               var animationEnd =
                 "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
               this.addClass("animated " + animationName).one(
                 animationEnd,
-                function() {
+                function () {
                   $(this).removeClass("animated " + animationName);
                 }
               );
               return this;
             }
           });
+
           this.timeDiff = $(".countdown").text("Time's Up!");
           $(".countdown").addClass("stop");
           clockIcon.animateCss("shake red-text");
-
-          // Push notification
-          //   Push.create("Alarm", {
-          //     body:
-          //       "Time's up young Warlock \nToo bad you don't have a TIME STONE",
-          //     icon: "img/clock.png",
-          //     vibrate: [300, 100],
-          //     timeout: 4000,
-          //     tag: "alarm",
-          //     onClick: function() {
-          //       window.focus("#");
-          //       this.close();
-          //     }
-          //   });
 
           // Sound Notification
           var audio = new Audio("./files/droplet.mp3");
@@ -132,13 +121,12 @@ var app = new Vue({
         ) {
           this.timeDiff = $(".countdown").text(
             duration.hours() +
-              ":" +
-              duration.minutes() +
-              ":" +
-              duration.seconds()
+            ":" +
+            duration.minutes() +
+            ":" +
+            duration.seconds()
           );
           this.showTimer = this.timeDiff;
-          // this.alarmDone()
         }
       };
 
@@ -162,9 +150,9 @@ var app = new Vue({
   },
 
   watch: {
-    notification: function() {
+    notification: function () {
       if (this.notification === 1) {
-        console.log("Notfication Updated by :", this.notification);
+        // console.log("Notfication Updated by :", this.notification);
         // Push notification
         Push.create("Alarm", {
           body: "Time's up young Warlock \nToo bad you don't have a TIME STONE",
@@ -172,7 +160,7 @@ var app = new Vue({
           vibrate: [300, 100],
           timeout: 4000,
           tag: "alarm",
-          onClick: function() {
+          onClick: function () {
             window.focus("#");
             this.close();
           }
