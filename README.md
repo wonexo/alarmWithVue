@@ -1,9 +1,23 @@
-# alarmWithVue
+#Simple Alarm Made with Love for Vue
 
-Here is an Alarm Clock Built with VueJs and Materialize.
+Built with:
+* _Vuejs_
+* _Materialize_
+* _Jquery_
 
-It Would really Be awesome for you guys to contribute.
 
-## You can View the link [here](https://wonexo.github.io/alarmWithVue/)
+### You can View the link [here](https://wonexo.github.io/alarmWithVue/)
 
-* Alarm Version 1.0
+* check the [v1](./v1) folder for the version one View.
+* current UI is also located in the [v2](./v2) folder.
+
+#### Pending Task :camel:
+- [x] Real time countdown timer
+- [x] Real time of the Day
+- [x] Real time Greeting
+- [ ] Real time Calendar
+- [ ] Social media Links 
+- [ ] Image Change with Greetings
+- [ ] Mobile View
+
+Feel free to contribute, it's open source :+1: :rocket:
