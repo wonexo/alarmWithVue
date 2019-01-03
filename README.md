@@ -1,4 +1,4 @@
-#Simple Alarm Made with Love for Vue
+# Simple Alarm Made with Love for Vue
 
 Built with:
 * _Vuejs_
