@@ -1,9 +1,12 @@
 # Simple Alarm Made with Love for Vue
 
+![Alarm with Vue](http://res.cloudinary.com/dfd5dyuho/image/upload/v1546559191/AlarmwithVue.gif){:align="right"}
+
 Built with:
 * _Vuejs_
 * _Materialize_
 * _Jquery_
+
 
 
 ### You can View the link [here](https://wonexo.github.io/alarmWithVue/)
