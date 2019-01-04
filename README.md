@@ -1,6 +1,6 @@
 # Simple Alarm Made with Love for Vue
 
-![Alarm with Vue](http://res.cloudinary.com/dfd5dyuho/image/upload/v1546559191/AlarmwithVue.gif)
+![Alarm with Vue](https://res.cloudinary.com/dfd5dyuho/image/upload/v1546559096/Alarm%20with%20Vue.gif)
 
 Built with:
 * _Vuejs_
