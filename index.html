@@ -25,7 +25,9 @@
                 <div class="col m6 bg-ash f-h">
                     <div class="greeting center-align">
                         <p>
-                            <img class="mn" src="./img/time/morning.svg" alt="">
+                            <img v-if="hourformat == 'Morning'" class="mn" src="./img/time/morning.svg" alt="">
+                            <img v-else-if="hourformat == 'Afternoon'" class="ft" src="./img/time/afternoon.svg" alt="">
+                            <img v-else="" class="ev" src="./img/time/evening.svg" alt="">
                             <span class="greet-text"> Good {{hourformat}}! </span> <br>
                             <span>Tues, 10th Dec</span>
                         </p>

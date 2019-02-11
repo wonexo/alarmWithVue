@@ -39,7 +39,9 @@ html {
     color: white;
 }
 
-.greeting .mn {
+.greeting .mn,
+.greeting .ft,
+.greeting .ev {
     width: 30px;
     height: 30px;
 }

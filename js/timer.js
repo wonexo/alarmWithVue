@@ -1,7 +1,7 @@
 var app = new Vue({
     el: "#app-timer",
     data: {
-        hourformat: "", //Morning , Afternoon , Evening
+        hourformat: '', //Morning , Afternoon , Evening
         clock: "", //Current Time
         TodaysDate: "", // Current Day and Day (Tues 24)
         showTimer: "welcome", //Shows the Timer
@@ -28,12 +28,12 @@ var app = new Vue({
             var hours = moment().format("HH");
             if (hours >= 12) {
                 if (hours >= 16) {
-                    this.hourformat = "Evening";
+                    this.hourformat = 'Evening';
                 } else {
-                    this.hourformat = "Afternoon";
+                    this.hourformat = 'Afternoon';
                 }
             } else {
-                this.hourformat = "Morning";
+                this.hourformat = 'Morning';
             }
         },
         setAlarm() {
