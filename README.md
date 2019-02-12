@@ -18,7 +18,7 @@ Built with:
 - [x] Real time Greeting
 - [ ] Real time Calendar
 - [ ] Social media Links 
-- [ ] Image Change with Greetings
+- [x] Image Change with Greetings
 - [ ] Mobile View
 - [ ] add toast when Button is clicked 
 
