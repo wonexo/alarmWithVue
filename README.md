@@ -21,6 +21,6 @@ Built with:
 - [ ] Social media Links 
 - [ ] Mobile View
 - [ ] add toast when Button is clicked 
-- [ ] Show calender greeting with festive day (E.g,Feb 12 Happy Vals Day) 
+- [ ] Show calender greeting with festive day (E.g,Feb 14 Happy Vals Day) 
 
 Feel free to contribute, it's open source :+1: :rocket:
