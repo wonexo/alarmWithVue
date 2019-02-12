@@ -3,7 +3,7 @@ var app = new Vue({
     data: {
         hourformat: '', //Morning , Afternoon , Evening
         clock: "", //Current Time
-        TodaysDate: "", // Current Day and Day (Tues 24)
+        todaysDate: "", // Current Day and Day (Tues 24)
         showTimer: "welcome", //Shows the Timer
         alarmTimeHour: "",
         alarmTimeMinute: "",
@@ -19,9 +19,9 @@ var app = new Vue({
     methods: {
         getDate() {
             // Getting the Calendar and updated Clock time
-            var calender = moment().format("ddd, MMMM D YYYY");
+            var calender = moment().format("ddd, MMM D");
             var clock = moment().format("hh:mm A");
-            this.TodaysDate = calender;
+            this.todaysDate = calender;
             this.clock = clock;
 
             // Comparing Time of Day

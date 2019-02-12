@@ -16,10 +16,11 @@ Built with:
 - [x] Real time countdown timer
 - [x] Real time of the Day
 - [x] Real time Greeting
+- [x] Image Change with Greetings
 - [ ] Real time Calendar
 - [ ] Social media Links 
-- [x] Image Change with Greetings
 - [ ] Mobile View
 - [ ] add toast when Button is clicked 
+- [ ] Show calender greeting with festive day (E.g,Feb 12 Happy Vals Day) 
 
 Feel free to contribute, it's open source :+1: :rocket:
