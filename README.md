@@ -18,9 +18,12 @@ Built with:
 - [x] Real time Greeting
 - [x] Image Change with Greetings
 - [x] Real time Calendar
-- [ ] Social media Links 
+- [X] Social media Links 
 - [ ] Mobile View
 - [ ] add toast when Button is clicked 
+- [ ] Mobile Notification
+- [ ] Firebase Message Notification
 - [ ] Show calender greeting with festive day (E.g,Feb 14 Happy Vals Day) 
+- [ ] Make it PWA 
 
 Feel free to contribute, it's open source :+1: :rocket:

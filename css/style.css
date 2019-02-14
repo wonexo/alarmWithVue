@@ -8,6 +8,21 @@ html {
     padding: 0;
 }
 
+:root {
+    --timer-ht: 28vh;
+    --timer-sz: 4em;
+}
+
+@media only screen and (max-width: 600px) {
+     :root {
+        --timer-ht: 20px;
+        --timer-sz: 3em;
+    }
+    .mobile-btn {
+        background-color: #060606;
+    }
+}
+
 
 /* off-mg turns of the Top and Buttom Margins */
 
@@ -50,7 +65,7 @@ html {
     position: relative;
     left: 15px;
     bottom: 15px;
-    font-size: 4em;
+    font-size: var(--timer-sz);
     font-weight: 100;
 }
 
@@ -76,7 +91,7 @@ html {
 }
 
 .timer-button {
-    margin-top: 28vh;
+    margin-top: var(--timer-ht);
     /* margin-left: 100px; */
 }
 
@@ -91,4 +106,4 @@ html {
 } */
 
 
-/* @media only screen and (max-width: 600px) {} */
+/* @media only screen and (min-width: 993px) {} */
