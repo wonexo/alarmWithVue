@@ -26,5 +26,6 @@ Built with:
 - [ ] Firebase Message Notification
 - [ ] Show calender greeting with festive day (E.g,Feb 14 Happy Vals Day) 
 - [ ] Make it PWA 
+- [ ] Upload Images and other resources to Cloudinary and Online resource
 
 Feel free to contribute, it's open source :+1: :rocket:
