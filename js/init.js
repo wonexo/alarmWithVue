@@ -3,8 +3,14 @@ $(document).ready(function() {
     Push.Permission.request();
 
     // M.AutoInit
-    var elem = document.querySelector(".timepicker");
-    var instance = M.Timepicker.init(elem, {
+
+    let mElem = document.querySelector(".mPick");
+
+    let instance = M.Timepicker.init(mElem, {
+        twelveHour: true
+    })
+    let dElem = document.querySelector(".dPick");
+    let instances = M.Timepicker.init(dElem, {
         twelveHour: true
     });
 

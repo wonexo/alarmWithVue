@@ -49,18 +49,18 @@
                             <!-- // Input Section for setting up alarm //12hr Format -->
                             <div class="col s6">
                                 <div class="col s10 push-s3">
-                                    <input type="text" class="timepicker white-text " placeholder="Set Alarm">
+                                    <input v-on:click="timeType = 'mobile'" type="text" class="mPick timepicker white-text" placeholder="Set Alarm">
                                 </div>
                             </div>
 
                             <div class="col s6">
                                 <!-- // Alarm Trigger Button -->
-                                <a id="menu" @click="setAlarm" class="btn-floating btn-large waves-effect waves-light mobile-btn">
+                                <a @click="setAlarm" class="btn-floating btn-large waves-effect waves-light mobile-btn">
                                     <i class="material-icons">add_alarm</i>
                                 </a>
 
                                 <!-- // Reset Button -->
-                                <a id="nextmenu" @click="resetAlarm" class="btn-floating btn-large waves-effect waves-light mobile-btn">
+                                <a @click="resetAlarm" class="btn-floating btn-large waves-effect waves-light mobile-btn">
                                     <i class="material-icons">replay</i>
                                 </a>
                             </div>
@@ -83,7 +83,7 @@
                         <div class="col s6">
                             <div class=" col s4"></div>
                             <div class="col s8">
-                                <input type="text" class="timepicker" placeholder="Set Alarm">
+                                <input v-on:click="timeType = 'desktop'" type="text" class="timepicker dPick" placeholder="Set Alarm">
                             </div>
                         </div>
 

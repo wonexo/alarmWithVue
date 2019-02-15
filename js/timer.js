@@ -12,6 +12,7 @@ var app = new Vue({
         timeDiff: "",
         showClock: "",
         notification: 0,
+        timeType: undefined,
         saveInterval: undefined,
         timeInterval: undefined,
         countDown: undefined
@@ -39,9 +40,22 @@ var app = new Vue({
         setAlarm() {
             Push.Permission.request();
             // Extracting the Hour and Minute from the Inputed Time
-            var time = $(".timepicker");
+
             // var time = document.querySelector(".timepicker");
+
+            // let mPick = $('.mPick');
+            // let dPick = $('.dPick');
+
+            var time;
+
+            if (this.timeType === "mobile") {
+                time = $('.mPick');
+            }
+            if (this.timeType === "desktop") {
+                time = $('.dPick');
+            }
             var newTime = time.val();
+            // console.log(newTime);
             var timeSplit = newTime.split(":");
             var timeSplitLetter = timeSplit[1] && timeSplit[1].split(" ");
 
