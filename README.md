@@ -18,8 +18,9 @@ Built with:
 - [x] Real time Greeting
 - [x] Image Change with Greetings
 - [x] Real time Calendar
-- [X] Social media Links 
-- [ ] Mobile View
+- [x] Social media Links 
+- [x] Mobile View
+- [ ] Add proloader animation
 - [ ] add toast when Button is clicked 
 - [ ] Mobile Notification
 - [ ] Firebase Message Notification
