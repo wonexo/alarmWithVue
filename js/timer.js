@@ -118,7 +118,6 @@ var app = new Vue({
                     audio.play();
 
                     // Alarm Animation
-                    // clockIcon.animateCss("shake red-text");
 
                 } else if (
                     duration.hours() ||
@@ -147,8 +146,6 @@ var app = new Vue({
         resetAlarm() {
             clearInterval(this.saveInterval);
             //* Reseting Alarm
-            // $("#clock").removeClass("animated shake");
-            // $("#clock").removeClass("red-text");
             $(".countdown").removeClass("stop");
             console.log("classes removed");
             this.timeDiff = $(".countdown").text("0:0:0");
@@ -158,7 +155,6 @@ var app = new Vue({
     watch: {
         notification: function() {
             if (this.notification === 1) {
-                // console.log("Notfication Updated by :", this.notification);
                 // Push notification
                 Push.create("Alarm", {
                     body: "Time's up young Warlock \nToo bad you don't have a TIME STONE",
