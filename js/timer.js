@@ -1,6 +1,7 @@
 var app = new Vue({
     el: "#app-timer",
     data: {
+        username: '',
         hourformat: '', //Morning , Afternoon , Evening
         clock: "", //Current Time
         todaysDate: "", // Current Day and Day (Tues 24)
@@ -12,6 +13,7 @@ var app = new Vue({
         timeDiff: "",
         showClock: "",
         notification: 0,
+        login: 'yes',
         timeType: undefined,
         saveInterval: undefined,
         timeInterval: undefined,
@@ -149,7 +151,16 @@ var app = new Vue({
             $(".countdown").removeClass("stop");
             console.log("classes removed");
             this.timeDiff = $(".countdown").text("0:0:0");
+        },
+        logIn() {
+            const FIREBASE_AUTH = firebase.auth();
+            FIREBASE_AUTH.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+        },
+        logOut() {
+            const FIREBASE_AUTH = firebase.auth();
+            FIREBASE_AUTH.signOut;
         }
+
     },
 
     watch: {
@@ -171,6 +182,29 @@ var app = new Vue({
         }
     },
     created() {
+
+        // -------Event Listener -------//
+        const FIREBASE_AUTH = firebase.auth();
+
+        // var freshName = "blank";
+        FIREBASE_AUTH.onAuthStateChanged(handleAuthStateChanged);
+
+        function handleAuthStateChanged(user) {
+            if (user) {
+                var breakName = user.displayName.split(" ");
+                var firstName = breakName[0];
+                app.username = firstName;
+                app.login = 'yes';
+                console.log(user.displayName + " logged In");
+                console.log(app.username);
+
+            } else {
+                app.login = 'no';
+
+                console.log('No user logged in yet');
+
+            }
+        }
         this.timeInterval = setInterval(this.getDate, 100);
     }
 });

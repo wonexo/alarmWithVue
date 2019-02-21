@@ -9,13 +9,13 @@
     <title>Alarm</title>
 
     <!-- My stylesheet Vendor -->
-    <link rel="stylesheet" type="text/css" href="vendor/css/animate.css">
-    <link rel="stylesheet" type="text/css" href="vendor/css/materialize.css" media="screen,projection">
-    <link rel="stylesheet" type="text/css" href="vendor/css/material-icons.css">
+    <link rel="stylesheet" type="text/css" href="./vendor/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="./vendor/css/materialize.css" media="screen,projection">
+    <link rel="stylesheet" type="text/css" href="./vendor/css/material-icons.css">
     <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
 
     <!-- My css -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 
 <body>
@@ -28,16 +28,18 @@
                             <img v-if="hourformat == 'Morning'" class="mn" src="./img/time/morning.svg" alt="">
                             <img v-else-if="hourformat == 'Afternoon'" class="ft" src="./img/time/afternoon.svg" alt="">
                             <img v-else="" class="ev" src="./img/time/evening.svg" alt="">
-                            <span class="greet-text"> Good {{hourformat}}! </span> <br>
+                            <span class="greet-text"> Good {{hourformat}} {{username}} !</span><br>
                             <span> {{todaysDate}} </span><br>
                             <span class="hide-on-med-and-up"> {{clock}} </span>
-
                         </p>
+
+                        <p v-if="login == 'no'" id="log-out" @click="logIn" class="quick-login">Log In <img class="google-login" src="img/time/google-r.png" alt="Google Logo"> </p>
+                        <p v-if="login == 'yes'" id="log-in" @click="logOut" class="quick-login">Log Out <img class="google-login" src="img/time/google-r.png" alt="Google Logo"> </p>
                     </div>
 
                     <div class="output center-align">
                         <p>
-                            <img class="clock-img" src="./img/time.svg" alt="alarm display">
+                            <img class="clock-img" src="/./img/time.svg" alt="alarm display">
                             <span class="countdown white-text">
                                 <span class="stop" v-cloak>{{showTimer}}</span>
                             </span>
@@ -67,6 +69,7 @@
 
                         </div>
                     </div>
+
 
                     <div class="social-link center-align">
                         <a href="github.com/wonexo"><img src="./img/github.svg"></a>
@@ -106,15 +109,21 @@
         </div>
     </div>
 
+    <!-- Firebase SDK -->
+    <script src="/__/firebase/5.8.3/firebase.js"></script>
+    <script src="/__/firebase/init.js"></script>
+
     <!--My Javascript Vendors -->
-    <script type="text/javascript" src="vendor/js/jquery.js"></script>
-    <script type="text/javascript" src="vendor/js/materialize_beta.js"></script>
+    <script type="text/javascript" src="/vendor/js/jquery.js"></script>
+    <script type="text/javascript" src="/vendor/js/materialize_beta.js"></script>
     <!-- <script type="text/javascript" src="vendor/js/materialize.js"></script> -->
-    <script type="text/javascript " src="vendor/js/push.min.js "></script>
-    <script type=" text/javascript " src="vendor/js/vue.min.js "></script>
-    <script type="text/javascript " src="vendor/js/moment.js "></script>
+    <script type=" text/javascript " src="/vendor/js/vue.min.js "></script>
+    <script type="text/javascript " src="/vendor/js/moment.js "></script>
+    <script type="text/javascript " src="/vendor/js/push.min.js "></script>
+
 
     <!-- My Javascript -->
     <script type="text/javascript " src="js/init.js "></script>
     <script type="text/javascript " src="js/timer.js "></script>
-</body>
+
+    <!-- </body> -->
