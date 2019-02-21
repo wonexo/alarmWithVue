@@ -67,6 +67,11 @@ html {
     /* font-size: 20px; */
 }
 
+.quick-login {
+    position: relative;
+    top: 50px;
+}
+
 .quick-login .google-login {
     position: relative;
     top: 5px;
