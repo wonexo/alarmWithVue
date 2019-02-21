@@ -33,8 +33,18 @@
                             <span class="hide-on-med-and-up"> {{clock}} </span>
                         </p>
 
-                        <p v-if="login == 'no'" id="log-out" @click="logIn" class="quick-login">Log In <img class="google-login" src="img/time/google-r.png" alt="Google Logo"> </p>
-                        <p v-if="login == 'yes'" id="log-in" @click="logOut" class="quick-login">Log Out <img class="google-login" src="img/time/google-r.png" alt="Google Logo"> </p>
+                        <p v-if="login == 'no'" id="log-out" @click="logIn" class="quick-login">
+                            <span class="signup-btn">
+                                <img class="google-login" src="img/time/google.png" alt="Google Logo">
+                                <span class="signup-btn-txt">Sign In</span>
+                            </span>
+                        </p>
+                        <p v-if="login == 'yes'" id="log-in" @click="logOut" class="quick-login">
+                            <span class="signup-btn">
+                                <img class="google-login" src="img/time/google.png" alt="Google Logo">
+                                <span class="signup-btn-txt">Sign Out</span>
+                            </span>
+                        </p>
                     </div>
 
                     <div class="output center-align">
@@ -126,4 +136,4 @@
     <script type="text/javascript " src="js/init.js "></script>
     <script type="text/javascript " src="js/timer.js "></script>
 
-    <!-- </body> -->
+</body>

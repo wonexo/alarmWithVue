@@ -195,12 +195,11 @@ var app = new Vue({
                 var firstName = breakName[0];
                 app.username = firstName;
                 app.login = 'yes';
-                console.log(user.displayName + " logged In");
+                console.log(user.displayName + "logged In");
                 console.log(app.username);
 
             } else {
                 app.login = 'no';
-
                 console.log('No user logged in yet');
 
             }
