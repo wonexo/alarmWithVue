@@ -1,9 +1,9 @@
 var app = new Vue({
     el: "#app-timer",
     data: {
-        hourformat: '', //Morning , Afternoon , Evening
+        hourformat: "", //Morning , Afternoon , Evening
         clock: "", //Current Time
-        todaysDate: "", // Current Day and Day (Tues 24)
+        TodaysDate: "", // Current Day and Day (Tues 24)
         showTimer: "welcome", //Shows the Timer
         alarmTimeHour: "",
         alarmTimeMinute: "",
@@ -12,7 +12,6 @@ var app = new Vue({
         timeDiff: "",
         showClock: "",
         notification: 0,
-        timeType: undefined,
         saveInterval: undefined,
         timeInterval: undefined,
         countDown: undefined
@@ -20,42 +19,29 @@ var app = new Vue({
     methods: {
         getDate() {
             // Getting the Calendar and updated Clock time
-            var calender = moment().format("ddd, MMM D");
+            var calender = moment().format("ddd, MMMM D YYYY");
             var clock = moment().format("hh:mm A");
-            this.todaysDate = calender;
+            this.TodaysDate = calender;
             this.clock = clock;
 
             // Comparing Time of Day
             var hours = moment().format("HH");
             if (hours >= 12) {
                 if (hours >= 16) {
-                    this.hourformat = 'Evening';
+                    this.hourformat = "Evening";
                 } else {
-                    this.hourformat = 'Afternoon';
+                    this.hourformat = "Afternoon";
                 }
             } else {
-                this.hourformat = 'Morning';
+                this.hourformat = "Morning";
             }
         },
         setAlarm() {
             Push.Permission.request();
             // Extracting the Hour and Minute from the Inputed Time
-
+            var time = $(".timepicker");
             // var time = document.querySelector(".timepicker");
-
-            // let mPick = $('.mPick');
-            // let dPick = $('.dPick');
-
-            var time;
-
-            if (this.timeType === "mobile") {
-                time = $('.mPick');
-            }
-            if (this.timeType === "desktop") {
-                time = $('.dPick');
-            }
             var newTime = time.val();
-            // console.log(newTime);
             var timeSplit = newTime.split(":");
             var timeSplitLetter = timeSplit[1] && timeSplit[1].split(" ");
 
@@ -118,6 +104,7 @@ var app = new Vue({
                     audio.play();
 
                     // Alarm Animation
+                    // clockIcon.animateCss("shake red-text");
 
                 } else if (
                     duration.hours() ||
@@ -146,6 +133,8 @@ var app = new Vue({
         resetAlarm() {
             clearInterval(this.saveInterval);
             //* Reseting Alarm
+            // $("#clock").removeClass("animated shake");
+            // $("#clock").removeClass("red-text");
             $(".countdown").removeClass("stop");
             console.log("classes removed");
             this.timeDiff = $(".countdown").text("0:0:0");
@@ -155,6 +144,7 @@ var app = new Vue({
     watch: {
         notification: function() {
             if (this.notification === 1) {
+                // console.log("Notfication Updated by :", this.notification);
                 // Push notification
                 Push.create("Alarm", {
                     body: "Time's up young Warlock \nToo bad you don't have a TIME STONE",

@@ -8,21 +8,6 @@ html {
     padding: 0;
 }
 
-:root {
-    --timer-ht: 28vh;
-    --timer-sz: 4em;
-}
-
-@media only screen and (max-width: 600px) {
-     :root {
-        --timer-ht: 20px;
-        --timer-sz: 3em;
-    }
-    .mobile-btn {
-        background-color: #060606;
-    }
-}
-
 
 /* off-mg turns of the Top and Buttom Margins */
 
@@ -54,9 +39,7 @@ html {
     color: white;
 }
 
-.greeting .mn,
-.greeting .ft,
-.greeting .ev {
+.greeting .mn {
     width: 30px;
     height: 30px;
 }
@@ -65,7 +48,7 @@ html {
     position: relative;
     left: 15px;
     bottom: 15px;
-    font-size: var(--timer-sz);
+    font-size: 4em;
     font-weight: 100;
 }
 
@@ -91,7 +74,7 @@ html {
 }
 
 .timer-button {
-    margin-top: var(--timer-ht);
+    margin-top: 28vh;
     /* margin-left: 100px; */
 }
 
@@ -106,4 +89,4 @@ html {
 } */
 
 
-/* @media only screen and (min-width: 993px) {} */
+/* @media only screen and (max-width: 600px) {} */

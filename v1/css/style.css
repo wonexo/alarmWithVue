@@ -1,0 +1,77 @@
+[v-cloak] {
+    display: none;
+}
+
+.profile {
+    padding-top: 5px;
+    max-height: 100px;
+    height: auto;
+}
+
+.profile h6 {
+    line-height: 25px;
+}
+
+.date,
+.time {
+    display: block;
+    padding: 10px;
+    padding-right: 20px;
+    height: 60px;
+}
+
+.time {
+    margin-top: -20px;
+}
+
+.date span,
+.time span {
+    padding: 10px;
+}
+
+.alarm-icon i {
+    font-size: 22em;
+}
+
+.timer .num {
+    font-size: 5em;
+    padding: 20px;
+}
+
+.timer-button {
+    margin-top: 10px;
+}
+
+.nxt-btn {
+    margin-top: 10px;
+    /* border: 1px solid white; */
+}
+
+.time-diff {
+    margin-top: 75px;
+    height: 71px;
+    margin-bottom: 20px;
+}
+
+.countdown {
+    font-family: 'Lato', sans-serif;
+    font-size: 4.5em;
+}
+
+.stop {
+    font-size: 50px !important;
+}
+
+.tap-target-content {
+    padding: 100px !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .tap-target-wrapper {
+        display: none;
+    }
+    .time-diff {
+        margin-top: 0px;
+        height: 71px;
+    }
+}

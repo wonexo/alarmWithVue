@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- add toast when Button is clicked -->
 
 <head>
     <meta charset="UTF-8">
@@ -22,16 +21,12 @@
     <div id="app-timer">
         <div class="container-fluid">
             <div class="row off-mg">
-                <div class="col m6 s12 bg-ash f-h">
+                <div class="col m6 bg-ash f-h">
                     <div class="greeting center-align">
                         <p>
-                            <img v-if="hourformat == 'Morning'" class="mn" src="./img/time/morning.svg" alt="">
-                            <img v-else-if="hourformat == 'Afternoon'" class="ft" src="./img/time/afternoon.svg" alt="">
-                            <img v-else="" class="ev" src="./img/time/evening.svg" alt="">
+                            <img class="mn" src="./img/time/morning.svg" alt="">
                             <span class="greet-text"> Good {{hourformat}}! </span> <br>
-                            <span> {{todaysDate}} </span><br>
-                            <span class="hide-on-med-and-up"> {{clock}} </span>
-
+                            <span>Tues, 10th Dec</span>
                         </p>
                     </div>
 
@@ -42,39 +37,16 @@
                                 <span class="stop" v-cloak>{{showTimer}}</span>
                             </span>
                         </p>
-
-
-                        <!-- // For setting the Alarm  On Mobile Only-->
-                        <div class="col s12 timer-button hide-on-med-and-up">
-                            <!-- // Input Section for setting up alarm //12hr Format -->
-                            <div class="col s6">
-                                <div class="col s10 push-s3">
-                                    <input v-on:click="timeType = 'mobile'" type="text" class="mPick timepicker white-text" placeholder="Set Alarm">
-                                </div>
-                            </div>
-
-                            <div class="col s6">
-                                <!-- // Alarm Trigger Button -->
-                                <a @click="setAlarm" class="btn-floating btn-large waves-effect waves-light mobile-btn">
-                                    <i class="material-icons">add_alarm</i>
-                                </a>
-
-                                <!-- // Reset Button -->
-                                <a @click="resetAlarm" class="btn-floating btn-large waves-effect waves-light mobile-btn">
-                                    <i class="material-icons">replay</i>
-                                </a>
-                            </div>
-
-                        </div>
                     </div>
 
                     <div class="social-link center-align">
-                        <a href="github.com/wonexo"><img src="./img/github.svg"></a>
-                        <a href="twitter.com/wonexo"><img src="./img/twitter.svg"></a>
-                        <a href="medium,com/@wonexo"><img src="./img/medium.svg"></a>
+                        <img src="./img/github.svg">
+                        <img src="./img/twitter.svg">
+                        <img src="./img/medium.svg">
                     </div>
+
                 </div>
-                <div class="col m6 hide-on-small-only f-h">
+                <div class="col m6 bg-grey f-h">
                     <h5 class="right-align">{{clock}}</h5>
 
                     <!-- // For setting the Alarm -->
@@ -83,7 +55,7 @@
                         <div class="col s6">
                             <div class=" col s4"></div>
                             <div class="col s8">
-                                <input v-on:click="timeType = 'desktop'" type="text" class="timepicker dPick" placeholder="Set Alarm">
+                                <input type="text" class="timepicker" placeholder="Set Alarm">
                             </div>
                         </div>
 
@@ -105,6 +77,48 @@
             </div>
         </div>
     </div>
+
+    <!-- <p> Good {{hourformat}}! <br> {{TodaysDate}} <br> {{clock}}</p>
+    <span class="countdown">
+            <span class="stop" v-cloak>{{showTimer}}</span>
+    </span> -->
+
+    <!-- Details for the UI -->
+    <!-- 
+        // Good {{hourformat}}!
+        // {{TodaysDate}}
+        // {{clock}} 
+        <span class="countdown">
+            <span class="stop" v-cloak>{{showTimer}}</span>
+        </span>
+        // {{showTimer}} 
+
+
+
+    // For setting the Alarm
+    <div class="col s12 timer-button">
+        // Input Section for setting up alarm //12hr Format
+        <div class="col s6">
+            <input type="text" class="timepicker" placeholder="Set Alarm">
+        </div>
+
+        <div class="col s3">
+            // Alarm Trigger Button
+            <a id="menu" @click="setAlarm" class="btn-floating btn-large waves-effect waves-light blue">
+                <i class="material-icons">add_alarm</i>
+            </a>
+
+        </div>
+
+        <div class=" col s3">
+            // Reset Button
+            <a id="nextmenu" @click="resetAlarm" class="btn-floating btn-large waves-effect waves-light red">
+                <i class="material-icons">replay</i>
+            </a>
+        </div>
+    </div>
+
+    -->
 
     <!--My Javascript Vendors -->
     <script type="text/javascript" src="vendor/js/jquery.js"></script>
