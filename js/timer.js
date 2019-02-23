@@ -117,6 +117,7 @@ var app = new Vue({
                     var audio = new Audio("./files/droplet.mp3");
                     audio.play();
 
+
                     // Alarm Animation
 
                 } else if (
@@ -155,6 +156,11 @@ var app = new Vue({
     watch: {
         notification: function() {
             if (this.notification === 1) {
+                M.toast({
+                    html: 'TIme is Up',
+                    displayLength: 5000
+
+                });
                 // Push notification
                 Push.create("Alarm", {
                     body: "Time's up young Warlock \nToo bad you don't have a TIME STONE",

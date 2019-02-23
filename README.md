@@ -24,9 +24,9 @@ Built with:
 - [x] Social media Links 
 - [x] Mobile View
 - [x] Firebase Authenticaion :fire:
+- [x] add toast when Button is clicked 
 - [ ] Firebase Message Notification
 - [ ] Add proloader animation
-- [ ] add toast when Button is clicked 
 - [ ] Mobile Notification
 - [ ] Firebase Message Notification
 - [ ] Show calender greeting with festive day (E.g,Feb 14 Happy Vals Day) 
