@@ -6,8 +6,35 @@
 ![Alarm with Vue](https://res.cloudinary.com/dfd5dyuho/image/upload/v1546559096/Alarm%20with%20Vue.gif)
 
 Built with:
-|-------|-------|---------|
-|_Vuejs_|_Materialize_|_Jquery_|
+
+<!-- Table start-->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://vuejs.org" target="_blank">
+          <img width="222px" src="https://https://vuejs.org/images/logo.png">
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://vehikl.com/" target="_blank">
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://materializecss.com" target="_blank">
+          <img width="222px" src="https://seeklogo.com/images/M/materialize-logo-0FCAD8A6F8-seeklogo.com.png">
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://jquery.com" target="_blank">
+          <img width="222px" src="https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/JQuery_logo-512.png">
+        </a>
+      </td>
+    </tr><tr></tr>
+  </tbody>
+</table>
+
+<!-- Table end -->
  
 ### You can View the link 
 * [Firbase Domain](https://vue-alarm.firebaseapp.com)
