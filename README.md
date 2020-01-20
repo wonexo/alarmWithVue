@@ -1,13 +1,13 @@
 <p align="center"><a href="https://vuejs.org" target="_blank" rel="noopener noreferrer"><img width="100" src="https://vuejs.org/images/logo.png" alt="Vue logo"></a></p>
+
 # Alarm made with VueJs
 
 
 ![Alarm with Vue](https://res.cloudinary.com/dfd5dyuho/image/upload/v1546559096/Alarm%20with%20Vue.gif)
 
 Built with:
-* _Vuejs_
-* _Materialize_
-* _Jquery_
+|-------|-------|---------|
+|_Vuejs_|_Materialize_|_Jquery_|
  
 ### You can View the link 
 * [Firbase Domain](https://vue-alarm.firebaseapp.com)
