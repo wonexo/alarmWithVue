@@ -8,28 +8,11 @@
 ## Built with:
 
 <!-- Table start-->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="middle">
-        <a href="https://vuejs.org" target="_blank">
-          <img height="100px" src="https://vuejs.org/images/logo.png">
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://materializecss.com" target="_blank">
-          <img height="100px" src="https://seeklogo.com/images/M/materialize-logo-0FCAD8A6F8-seeklogo.com.png">
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://jquery.com" target="_blank">
-          <img height="100px" src="https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/JQuery_logo-512.png">
-        </a>
-      </td>
-    </tr><tr></tr>
-  </tbody>
-</table>
-
+<p align="center">
+    <img height="100px" src="https://vuejs.org/images/logo.png">
+    <img height="100px" src="https://seeklogo.com/images/M/materialize-logo-0FCAD8A6F8-seeklogo.com.png">
+    <img height="100px" src="https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/JQuery_logo-512.png">
+</p>
 <!-- Table end -->
  
 ### You can View the link 
