@@ -5,13 +5,18 @@
 
 <p align="center"> <img src="https://res.cloudinary.com/dfd5dyuho/image/upload/v1546559096/Alarm%20with%20Vue.gif" width="600px"> </p>
 
+
+<br>
+<br>
+
 ## Built with:
 
 <!-- Table start-->
 <p align="center">
-    <img height="100px" src="https://vuejs.org/images/logo.png">
-    <img height="100px" src="https://seeklogo.com/images/M/materialize-logo-0FCAD8A6F8-seeklogo.com.png">
-    <img height="100px" src="https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/JQuery_logo-512.png">
+<br>
+    <img height="80px" src="https://vuejs.org/images/logo.png">
+    <img height="80px" src="https://seeklogo.com/images/M/materialize-logo-0FCAD8A6F8-seeklogo.com.png">
+    <img height="80px" src="https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/JQuery_logo-512.png">
 </p>
 <!-- Table end -->
  
