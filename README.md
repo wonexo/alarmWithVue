@@ -1,11 +1,11 @@
 <p align="center"><a href="https://vuejs.org" target="_blank" rel="noopener noreferrer"><img width="100" src="https://vuejs.org/images/logo.png" alt="Vue logo"></a></p>
 
-# Alarm made with VueJs
+<h1 align="center"> Alarm made with VueJs </h1>
 
 
 ![Alarm with Vue](https://res.cloudinary.com/dfd5dyuho/image/upload/v1546559096/Alarm%20with%20Vue.gif)
 
-Built with:
+## Built with:
 
 <!-- Table start-->
 <table>
@@ -13,17 +13,17 @@ Built with:
     <tr>
       <td align="center" valign="middle">
         <a href="https://vuejs.org" target="_blank">
-          <img width="222px" src="https://vuejs.org/images/logo.png">
+          <img height="100px" src="https://vuejs.org/images/logo.png">
         </a>
       </td>
       <td align="center" valign="middle">
         <a href="https://materializecss.com" target="_blank">
-          <img width="222px" src="https://seeklogo.com/images/M/materialize-logo-0FCAD8A6F8-seeklogo.com.png">
+          <img height="100px" src="https://seeklogo.com/images/M/materialize-logo-0FCAD8A6F8-seeklogo.com.png">
         </a>
       </td>
       <td align="center" valign="middle">
         <a href="https://jquery.com" target="_blank">
-          <img width="222px" src="https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/JQuery_logo-512.png">
+          <img height="100px" src="https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/JQuery_logo-512.png">
         </a>
       </td>
     </tr><tr></tr>
