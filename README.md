@@ -3,7 +3,7 @@
 <h1 align="center"> Alarm made with VueJs </h1>
 
 
-![Alarm with Vue](https://res.cloudinary.com/dfd5dyuho/image/upload/v1546559096/Alarm%20with%20Vue.gif)
+<p align="center"> <img src="https://res.cloudinary.com/dfd5dyuho/image/upload/v1546559096/Alarm%20with%20Vue.gif" width="600px"> </p>
 
 ## Built with:
 
