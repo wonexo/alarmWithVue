@@ -13,7 +13,7 @@ Built with:
     <tr>
       <td align="center" valign="middle">
         <a href="https://vuejs.org" target="_blank">
-          <img width="222px" src="https://https://vuejs.org/images/logo.png">
+          <img width="222px" src="https://vuejs.org/images/logo.png">
         </a>
       </td>
       <td align="center" valign="middle">
