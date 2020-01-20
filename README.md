@@ -17,10 +17,6 @@ Built with:
         </a>
       </td>
       <td align="center" valign="middle">
-        <a href="https://vehikl.com/" target="_blank">
-        </a>
-      </td>
-      <td align="center" valign="middle">
         <a href="https://materializecss.com" target="_blank">
           <img width="222px" src="https://seeklogo.com/images/M/materialize-logo-0FCAD8A6F8-seeklogo.com.png">
         </a>
