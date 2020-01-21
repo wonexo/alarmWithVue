@@ -28,7 +28,12 @@
 * check the [v1](./v1) folder for the version one View.
 * current UI is also located in the [v2](./v2) folder.
 
+# CONTRIBUTIONS
+
+You can contribute to the opensource by checking the issues tab or adding your own issues if you notice any (don't forget to fork the repo first :grin:).
+
 #### Pending Task :camel:
+
 - [x] Real time countdown timer
 - [x] Real time of the Day
 - [x] Real time Greeting
