@@ -43,9 +43,7 @@ You can contribute to the opensource by checking the issues tab or adding your o
 - [x] Mobile View
 - [x] Firebase Authenticaion :fire:
 - [x] add toast when Button is clicked 
-- [ ] Firebase Message Notification
 - [ ] Add proloader animation
-- [ ] Mobile Notification
 - [ ] Firebase Message Notification
 - [ ] Show calender greeting with festive day (E.g,Feb 14 Happy Vals Day) 
 - [ ] Make it PWA 
